@@ -9,7 +9,7 @@ Style
 What is the visual style?
 Is the game going to be 2D or 3D?
 What is the game flow and feel like?
-
+bin chilling
 Features
 What is the main mechanic?
 What is the theme?
