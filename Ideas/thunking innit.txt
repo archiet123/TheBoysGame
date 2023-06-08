@@ -1,0 +1,18 @@
+﻿Game innit
+
+
+Character: cyborg/AI(?), respawns in his house every time where you can upgrade and customise shit
+
+
+
+
+World: scp style ish facility
+
+
+
+
+Enemies:
+low-level
+Mid-level
+High-level
+boss
