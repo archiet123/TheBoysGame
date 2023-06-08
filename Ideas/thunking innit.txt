@@ -1,7 +1,7 @@
 ﻿Game innit
+Inspiration: gungeon, tboi, post void, scp containment breach,
 
-
-Character: cyborg/AI(?), respawns in his house every time where you can upgrade and customise shit
+Character: mercenary(?) cyborg/AI(?), respawns in his house/bed every time where you can upgrade and customise shit
 
 
 
@@ -12,7 +12,23 @@ World: scp style ish facility
 
 
 Enemies:
-low-level
-Mid-level
-High-level
-boss
+low-level,
+Mid-level,
+High-level,
+bosses,
+
+layers: 1.facilty 1-1, facility 1-2
+        2.High Security 2-1, High Security 2-2
+        3.Boiler room.
+
+
+
+Plot:
+PC is a freelance mercenary hired by "company name here" to clean out the facility after a security breach.
+Final boss is the monster who started the breach
+monsters called anomalies
+
+
+
+
+Final boss (?)
