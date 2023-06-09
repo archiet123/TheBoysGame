@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,18 +8,18 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public float Movement;
 
-    public Trasnform MoveSpeed;
+    public Transform MoveSpeed;
 
     float HorizontalInput;
     float VerticalInput;
     Vector3 MoveDirection;
 
-    Ridgidbody rb;
+    Rigidbody rb;
 
     private void Start()
     {
-        rb = GetComponent<Ridgidbody>();
-        rb.freezeRotaion = true;
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
     }
 
     private void Update()
@@ -32,14 +33,14 @@ public class PlayerMovement : MonoBehaviour
     }
     private void MyInput()
     {
-        HorizontalInput.Input.GetAxisRaw("Horizontal");
-        VerticalInput.Input.GetAxisRaw("Vertical");
+        HorizontalInput = Input.GetAxisRaw("Horizontal");
+        VerticalInput = Input.GetAxisRaw("Vertical");
     }
 
     private void MovePlayer()
     {
         //calculate movement direction
-        MoveDirection = orientation.forward * VerticalInput + orientation.right * HorizontalInput;
+        MoveDirection = Orientation.forward * VerticalInput + Orientation.right * HorizontalInput;
 
         rb.AddForce(MoveDirection.normalized * MoveSpeed * 10f, ForceMode.Force);
     }
