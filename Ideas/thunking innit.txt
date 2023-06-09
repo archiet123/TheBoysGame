@@ -1,34 +1,51 @@
-﻿Game innit
-Inspiration: gungeon, tboi, post void, scp containment breach,
+﻿This document is the design document for our game. Here we will write down all our ideas that we have for the game.
 
-Character: mercenary(?) cyborg/AI(?), respawns in his house/bed every time where you can upgrade and customise shit
+Concept:
+The game will be a 3D shooter where a player has to progress through a facility clearing out "anomalies" as they go. 
+there will be 10 "layers" the player will have to play through, each layer containing 5 "sublayers", the 5th sublayer to each layer containing a mini boss or a milestone event.
+after each individual layer there will be different items or weapons the player can choose to take, making them stronger or weaker for whatever playstyle they want.
+The final boss will be located on the 5th sublayer of the 10th layer.
 
+Genre: 
+Action rougelike
 
+mechanics:
+players will have to find weapons through the levels to use them for that current run, once first discovered their "blueprint" is unlocked. A blueprints challenges must be completed to be able to start a run with that weapon
 
+visual style: 
+Reto horror(??)
 
-World: scp style ish facility
+What is the main mechanic?
+shooter stat buff(?)
 
-
-
-
-Enemies:
-low-level,
-Mid-level,
-High-level,
-bosses,
-
-layers: 1.facilty 1-1, facility 1-2
-        2.High Security 2-1, High Security 2-2
-        3.Boiler room.
-
-
-
-Plot:
+Story and Plot:
 PC is a freelance mercenary hired by "company name here" to clean out the facility after a security breach.
 Final boss is the monster who started the breach
 monsters called anomalies
 
+Characters:
+mercenary(?) cyborg/AI(?), respawns in his house/bed after each level, effectivley making the game an endless cycle.
+because the first characters are cyborg/AI, they are constantly learning and evolving, this is how they get stat buffs after each level
+
+Environments:
+there will be 10 stages in total, each stage has 5 substages.
+each stage will have the same appearance, gameplay difficulty will increase with stage.
+the layout of each sublayer will be randomly selected a list of created levels
+Stages:
+        facility:
+                1-1, 1-2, 1-3, 1-4, 1-5
+        high-security:
+                2-1, 2-2, 2-3, 2-4, 2-5
+        the-underground:
+                3-1, 3-2, 3-3, 3-4, 3-5
+
+Progression:
+the player will be rewarded with perminant percs/buffs after playing long runs, this might be new cosmetics/weapons/new characters
+
+finalboss:
+to be determined
 
 
 
-Final boss (?)
+
+
