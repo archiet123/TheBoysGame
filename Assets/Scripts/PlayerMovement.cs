@@ -6,9 +6,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float Movement;
+    public float MoveSpeed;
 
-    public Transform MoveSpeed;
+    public Transform Orientation;
 
     float HorizontalInput;
     float VerticalInput;
