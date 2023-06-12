@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         //ground check
-        Grounded = Physics.Raycast(transform.position, Vector3.down, PlayerHeight * 0.8f, WhatIsGround);
+        Grounded = Physics.Raycast(transform.position, Vector3.down, PlayerHeight * 0.5f + 0.2f, WhatIsGround);
 
         MyInput();
         SpeedControl();
@@ -115,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         // reset Y velocity
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.y);
+        rb.velocity = new Vector3(0f, rb.velocity.y);
 
         rb.AddForce(transform.up * JumpForce, ForceMode.Impulse);
     }
