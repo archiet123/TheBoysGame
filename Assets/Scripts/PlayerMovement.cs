@@ -115,8 +115,8 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         // reset Y velocity
-        //rb.velocity = new Vector3(0f, rb.velocity.y);
-        //rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.y); old code
+        // rb.velocity = new Vector3(0f, rb.velocity.y);
+        // rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.y);
         rb.AddForce(transform.up * JumpForce, ForceMode.Impulse);
     }
 
