@@ -10,21 +10,18 @@ public class PlayerInteract : MonoBehaviour
         //functionality for that entity is run on NpcInteractable.
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("e click");
+
             IInteractable interactable = GetInteractableObject();
             if (interactable != null)
             {
+                // Debug.Log("e click");
                 interactable.Interact(transform);
             }
-            // float InteractRange = 2f;
-            // Collider[] ColliderArray = Physics.OverlapSphere(transform.position, InteractRange);
-            // foreach (Collider Collider in ColliderArray)
-            // {
-            //     if (Collider.TryGetComponent(out IInteractable interactable))
-            //     {
-            //         interactable.Interact(transform);
-            //     }
-            // }
+            else
+            {
+                // Debug.Log("false");
+            }
+
         }
 
     }
@@ -40,7 +37,7 @@ public class PlayerInteract : MonoBehaviour
             if (Collider.TryGetComponent(out IInteractable interactable))
             {
                 interactableList.Add(interactable);
-                // return npcInteractable;
+                // return interactable;
             }
         }
         IInteractable closestInteractable = null;
@@ -57,6 +54,7 @@ public class PlayerInteract : MonoBehaviour
                 {
                     //closest interactable.
                     closestInteractable = interactable;
+                    // Debug.Log(closestInteractable);
                 }
             }
         }

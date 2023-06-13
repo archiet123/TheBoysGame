@@ -43,7 +43,7 @@ public class ButtonSphereInteracable : MonoBehaviour, IInteractable
         return "Push button";
     }
 
-    public void Interact(Transform IntoractorTransform)
+    void IInteractable.Interact(Transform InteractorTransform)
     {
         Debug.Log("calling push button");
         PushButton();
@@ -51,6 +51,7 @@ public class ButtonSphereInteracable : MonoBehaviour, IInteractable
 
     public Transform GetTransform()
     {
+        // Debug.Log("got transform");
         return transform;
     }
 }

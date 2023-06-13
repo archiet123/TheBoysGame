@@ -11,6 +11,7 @@ public class NpcInteractable : MonoBehaviour, IInteractable
     public void Interact()
     {
         Debug.Log($"Interacted with {NpcName}");
+        // Debug.Log("got name");
         //dialouge stuff to go here
     }
 
@@ -20,13 +21,15 @@ public class NpcInteractable : MonoBehaviour, IInteractable
         return InteractText;
     }
 
-    public void Interact(Transform IntoractorTransform)
+    public void Interact(Transform InteractorTransform)
     {
+        // Debug.Log("test interact");
         Interact();
     }
 
     public Transform GetTransform()
     {
+        // Debug.Log("got transform for derick");
         return transform;
     }
 }

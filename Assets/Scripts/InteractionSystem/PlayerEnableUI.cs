@@ -17,6 +17,7 @@ public class PlayerEnableUI : MonoBehaviour
         //if null interaction prompt will be displayed
         if (playerInteract.GetInteractableObject() != null)
         {
+            // Debug.Log("show ui");
             Show(playerInteract.GetInteractableObject());
         }
         else
