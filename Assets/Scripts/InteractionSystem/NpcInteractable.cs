@@ -7,12 +7,15 @@ public class NpcInteractable : MonoBehaviour, IInteractable
     [SerializeField] private string InteractText;
 
     public string NpcName;
+    public Dialogue dialogue;
+    public GameObject DialogueManager;
 
     public void Interact()
     {
         Debug.Log($"Interacted with {NpcName}");
         // Debug.Log("got name");
         //dialouge stuff to go here
+        TriggerDialogue();
     }
 
     //returns objects or npcs interact text
@@ -31,5 +34,10 @@ public class NpcInteractable : MonoBehaviour, IInteractable
     {
         // Debug.Log("got transform for derick");
         return transform;
+    }
+
+    public void TriggerDialogue()
+    {
+        DialogueManager.GetComponent<DialogueSystem>().StartDialogue(dialogue);
     }
 }
