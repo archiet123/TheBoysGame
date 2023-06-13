@@ -478,7 +478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939fe0070009d5049ad209d428d15e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 1993371124}
+  Prompt: {fileID: 1371383401}
+  panel: {fileID: 1396840330}
   nameText: {fileID: 617077448}
   dialogueText: {fileID: 910742020}
 --- !u!4 &260215052
@@ -1163,6 +1164,8 @@ MonoBehaviour:
     npc_name: Derick
     sentences:
     - You Stink
+    - hehe
+    - bye
   DialogueManager: {fileID: 260215050}
 --- !u!1 &597341162
 GameObject:
@@ -2162,6 +2165,43 @@ MonoBehaviour:
   ContainerGameObject: {fileID: 1974416849}
   playerInteract: {fileID: 597341166}
   interactTextMeshProUGUI: {fileID: 1676590341}
+--- !u!1 &1396840330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1396840331}
+  m_Layer: 5
+  m_Name: DialogueContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1396840331
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396840330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1863982756}
+  m_Father: {fileID: 1462132080}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1402323628
 GameObject:
   m_ObjectHideFlags: 0
@@ -2293,7 +2333,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1371383402}
-  - {fileID: 1863982756}
+  - {fileID: 1396840331}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3050,7 +3090,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863982755}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3058,8 +3098,8 @@ RectTransform:
   - {fileID: 1993371125}
   - {fileID: 617077447}
   - {fileID: 910742019}
-  m_Father: {fileID: 1462132080}
-  m_RootOrder: 1
+  m_Father: {fileID: 1396840331}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

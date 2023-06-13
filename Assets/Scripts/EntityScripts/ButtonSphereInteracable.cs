@@ -45,7 +45,6 @@ public class ButtonSphereInteracable : MonoBehaviour, IInteractable
 
     void IInteractable.Interact(Transform InteractorTransform)
     {
-        Debug.Log("calling push button");
         PushButton();
     }
 
