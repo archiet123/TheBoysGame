@@ -22,7 +22,7 @@ public class NpcInteractable : MonoBehaviour, IInteractable
 
     public void Interact(Transform IntoractorTransform)
     {
-
+        Interact();
     }
 
     public Transform GetTransform()

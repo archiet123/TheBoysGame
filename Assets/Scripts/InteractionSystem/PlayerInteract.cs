@@ -10,6 +10,7 @@ public class PlayerInteract : MonoBehaviour
         //functionality for that entity is run on NpcInteractable.
         if (Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("e click");
             IInteractable interactable = GetInteractableObject();
             if (interactable != null)
             {
@@ -60,6 +61,6 @@ public class PlayerInteract : MonoBehaviour
             }
         }
 
-        return null;
+        return closestInteractable;
     }
 }
