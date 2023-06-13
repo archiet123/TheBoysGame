@@ -5,6 +5,7 @@ using TMPro;
 
 public class DialogueSystem : MonoBehaviour
 {
+    public GameObject Prompt;
     public GameObject panel;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
@@ -13,12 +14,22 @@ public class DialogueSystem : MonoBehaviour
 
     void Start()
     {
+        panel.SetActive(false);
         sentences = new Queue<string>();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            DisplayNextSentence();
+        }
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
         panel.SetActive(true);
+        HidePrompt();
         nameText.text = dialogue.npc_name;
 
         sentences.Clear();
@@ -26,9 +37,15 @@ public class DialogueSystem : MonoBehaviour
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
+            Debug.Log("test");
         }
 
         DisplayNextSentence();
+    }
+    public void HidePrompt()
+    {
+        // DialogueManager.GetComponent<DialogueSystem>().StartDialogue(dialogue);
+        Prompt.SetActive(false);
     }
 
     public void DisplayNextSentence()
@@ -48,6 +65,7 @@ public class DialogueSystem : MonoBehaviour
         sentences = new Queue<string>();
         ;
         panel.SetActive(false);
+        Prompt.SetActive(true);
         dialogueText.text = "";
         nameText.text = "";
     }
