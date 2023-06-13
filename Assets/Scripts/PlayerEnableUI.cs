@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Palmmedia.ReportGenerator.Core;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -10,7 +11,9 @@ public class PlayerEnableUI : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerInteract.GetInteractableObject() != null)
+        // var program = new Program();
+
+        if (playerInteract.GetInteractableObject() != null)
         {
             Show();
         }
