@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Palmmedia.ReportGenerator.Core;
+// using Palmmedia.ReportGenerator.Core;
 using UnityEngine;
 using UnityEngine.Animations;
 using TMPro;
@@ -17,6 +17,7 @@ public class PlayerEnableUI : MonoBehaviour
         //if null interaction prompt will be displayed
         if (playerInteract.GetInteractableObject() != null)
         {
+            // Debug.Log("show ui");
             Show(playerInteract.GetInteractableObject());
         }
         else
@@ -25,14 +26,16 @@ public class PlayerEnableUI : MonoBehaviour
         }
     }
 
-    private void Show(NpcInteractable npcInteractable)
+    private void Show(IInteractable interactable)
     {
         ContainerGameObject.SetActive(true);
-        interactTextMeshProUGUI.text = npcInteractable.GetInteractText();
+        interactTextMeshProUGUI.text = interactable.GetInteractText();
     }
 
     private void Hide()
     {
         ContainerGameObject.SetActive(false);
     }
+
+
 }
