@@ -25,14 +25,16 @@ public class PlayerEnableUI : MonoBehaviour
         }
     }
 
-    private void Show(NpcInteractable npcInteractable)
+    private void Show(IInteractable interactable)
     {
         ContainerGameObject.SetActive(true);
-        interactTextMeshProUGUI.text = npcInteractable.GetInteractText();
+        interactTextMeshProUGUI.text = interactable.GetInteractText();
     }
 
     private void Hide()
     {
         ContainerGameObject.SetActive(false);
     }
+
+
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NpcInteractable : MonoBehaviour
+public class NpcInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField] private string InteractText;
 
@@ -18,5 +18,15 @@ public class NpcInteractable : MonoBehaviour
     public string GetInteractText()
     {
         return InteractText;
+    }
+
+    public void Interact(Transform IntoractorTransform)
+    {
+
+    }
+
+    public Transform GetTransform()
+    {
+        return transform;
     }
 }
