@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class StartGameButton : MonoBehaviour
 {
     public int gameStartScene;
 
-    public void StartGame()
-    {
+    public void StartGame(){        
         SceneManager.LoadScene(gameStartScene);
         ResumeGame();
-    }
+    }    
 
-    public void ResumeGame()
-    {
-        Time.timeScale = 1f;
-    }
-}
+    public void ResumeGame(){        
+        Time.timeScale = 1f;                
+    }  
+} 
