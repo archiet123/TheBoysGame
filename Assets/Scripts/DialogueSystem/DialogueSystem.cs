@@ -20,7 +20,7 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             DisplayNextSentence();
         }
@@ -63,7 +63,7 @@ public class DialogueSystem : MonoBehaviour
     public void EndDialogue()
     {
         sentences = new Queue<string>();
-        ;
+
         panel.SetActive(false);
         Prompt.SetActive(true);
         dialogueText.text = "";
