@@ -8,15 +8,15 @@ public class GameManager : MonoBehaviour
     public int[] weaponCounts;
     public int currentWeapon;
 
-    // private void Awake()
-    // {
-    //     if (Instance != null && Instance != this)
-    //     {
-    //         Destroy(this);
-    //     }
-    //     else
-    //     {
-    //         Instance = this;
-    //     }
-    // }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 }
