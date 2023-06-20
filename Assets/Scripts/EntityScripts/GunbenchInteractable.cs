@@ -11,7 +11,7 @@ public class GunbenchInteractable : MonoBehaviour, IInteractable
     void Start()
     {
         IsShown = false;
-        GunBenchUI.SetActive(false);
+        // GunBenchUI.SetActive(false);
     }
 
     private void ToggleBenchUI()
@@ -28,6 +28,7 @@ public class GunbenchInteractable : MonoBehaviour, IInteractable
     }
     public void UseGunBench()
     {
+        Debug.Log("Bench Toggled");
         ToggleBenchUI();
     }
 

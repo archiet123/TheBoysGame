@@ -7,7 +7,6 @@ public class PauseGameController : MonoBehaviour
     public static bool isPaused = false;
     public GameObject pauseMenu;
     public GameObject player;
-    public GameObject DialogueBox;
 
     void Start()
     {
