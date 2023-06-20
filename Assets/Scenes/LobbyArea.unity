@@ -11058,8 +11058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556b99e2bf743a541a5c767ad591a073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponCounts: 0a00000014000000
-  currentWeapon: 1
+  weaponCounts: 14000000
+  currentWeapon: 0
 --- !u!1001 &1450899312
 PrefabInstance:
   m_ObjectHideFlags: 0

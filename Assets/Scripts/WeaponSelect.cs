@@ -14,7 +14,7 @@ public class WeaponSelect : MonoBehaviour
         {
             Debug.Log("For Loop");
             int WeaponNum = i + 1;
-            weaponChoices[i].gameObject.SetActive(true);
+            // weaponChoices[i].gameObject.SetActive(true);
             weaponChoices[i].WeaponText.text = (i + 1).ToString();
             weaponChoices[i].GetComponent<Button>().onClick.RemoveAllListeners();
             weaponChoices[i].GetComponent<Button>().onClick.AddListener(() => SelectWeapon(GameManager.Instance.currentWeapon, WeaponNum));
