@@ -11,6 +11,12 @@ public class WeaponSelect : MonoBehaviour
     public GameObject Hammer;
     public GameObject Pistol;
     public GameObject AR;
+
+
+    void Start()
+    {
+        // Hammer = GameObject.Find("Hammer");
+    }
     private void OnEnable()
     {
         for (int i = 0; i < GameManager.Instance.weaponCounts[GameManager.Instance.currentWeapon]; i++)
@@ -29,5 +35,12 @@ public class WeaponSelect : MonoBehaviour
     private void SelectWeapon(int ID)
     {
         Debug.Log(ID);
+        if (ID == 1)
+        {
+            Hammer.SetActive(false);
+            AR.SetActive(true);
+            Debug.Log("setfalse");
+        }
+
     }
 }
