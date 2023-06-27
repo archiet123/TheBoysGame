@@ -52,5 +52,13 @@ public class WeaponSelect : MonoBehaviour
             ActiveWeapon.SetActive(true);
             Debug.Log(ActiveWeapon);
         }
+
+        else if (ID == 0)
+        {
+            ActiveWeapon.SetActive(false);
+            ActiveWeapon = Hammer;
+            ActiveWeapon.SetActive(true);
+            Debug.Log(ActiveWeapon);
+        }
     }
 }
