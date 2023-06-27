@@ -11,17 +11,20 @@ public class WeaponSelect : MonoBehaviour
     public GameObject Hammer;
     public GameObject Pistol;
     public GameObject AR;
+    GameObject ActiveWeapon;
 
 
     void Start()
     {
-        // Hammer = GameObject.Find("Hammer");
+        ActiveWeapon = Hammer;
+        Debug.Log(ActiveWeapon);
     }
+
     private void OnEnable()
     {
         for (int i = 0; i < GameManager.Instance.weaponCounts[GameManager.Instance.currentWeapon]; i++)
         {
-            Debug.Log("For Loop");
+            // Debug.Log("For Loop");
             int WeaponNum = i + 1;
             // weaponChoices[i].gameObject.SetActive(true);
             weaponChoices[i].WeaponText.text = (i + 1).ToString();
@@ -37,10 +40,17 @@ public class WeaponSelect : MonoBehaviour
         Debug.Log(ID);
         if (ID == 1)
         {
-            Hammer.SetActive(false);
-            AR.SetActive(true);
-            Debug.Log("setfalse");
+            ActiveWeapon.SetActive(false);
+            ActiveWeapon = AR;
+            ActiveWeapon.SetActive(true);
+            Debug.Log(ActiveWeapon);
         }
-
+        else if (ID == 13)
+        {
+            ActiveWeapon.SetActive(false);
+            ActiveWeapon = Pistol;
+            ActiveWeapon.SetActive(true);
+            Debug.Log(ActiveWeapon);
+        }
     }
 }

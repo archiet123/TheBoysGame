@@ -28,13 +28,13 @@ public class GunbenchInteractable : MonoBehaviour, IInteractable
     }
     public void UseGunBench()
     {
-        Debug.Log("Bench Toggled");
+        // Debug.Log("Bench Toggled");
         ToggleBenchUI();
     }
 
     public void CloseGunbench()
     {
-        Debug.Log("close");
+        // Debug.Log("close");
         GunBenchUI.SetActive(false);
         Time.timeScale = 1f;
         IsShown = false;
@@ -45,7 +45,7 @@ public class GunbenchInteractable : MonoBehaviour, IInteractable
 
     public void OpenGunbench()
     {
-        Debug.Log("open");
+        // Debug.Log("open");
         GunBenchUI.SetActive(true);
         Time.timeScale = 0f;
         IsShown = true;
