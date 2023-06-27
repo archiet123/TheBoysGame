@@ -38,7 +38,7 @@ public class GunScript : MonoBehaviour
 
     private void Update()
     {
-        Input();
+        MyInput();
 
         //Set ammo display if it exists 
         if (AmmoDisplay != null)
@@ -46,21 +46,21 @@ public class GunScript : MonoBehaviour
             AmmoDisplay.SetText(BulletsLeft / BulletsPerTap + " / " + MagazineSize / BulletsPerTap);
         }
     }
-    private void Input()
+    private void MyInput()
     {
         //is full auto availible
         if (AllowButtonHold)
         {
-            Shooting = Input.GetKey(KeyCode.Mouse0);
+            Shooting = (Input.GetKey(KeyCode.Mouse0));
         }
         else
         {
-            Shooting = Input.GetkeyDown(KeyCode.Mouse0);
+            Shooting = (Input.GetKeyDown(KeyCode.Mouse0));
         }
 
 
         //Reloading
-        if (Input.GetkeyDown(KeyCode.R) && BulletsLeft < MagazineSize && !Reloading)
+        if (Input.GetKeyDown(KeyCode.R) && BulletsLeft < MagazineSize && !Reloading)
         {
             Reload();
         }
