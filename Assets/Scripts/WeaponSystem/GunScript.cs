@@ -132,12 +132,13 @@ public class GunScript : MonoBehaviour
     private void Reload()
     {
         Reloading = true;
-        Invoke("Reloading Finished", ReloadTime);
+        Invoke("ReloadFinished", ReloadTime);
     }
 
     private void ReloadFinished()
     {
         BulletsLeft = MagazineSize;
         Reloading = false;
+        Debug.Log("Reloaded");
     }
 }
