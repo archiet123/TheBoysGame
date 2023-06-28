@@ -7236,7 +7236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434380993}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -29.06, y: 6.8, z: 29.07}
+  m_LocalPosition: {x: -21.71, y: 6.8, z: 29.07}
   m_LocalScale: {x: 21.014997, y: 14.901, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11227,7 +11227,11 @@ PrefabInstance:
       objectReference: {fileID: 2030714133}
     - target: {fileID: 4858947055314314429, guid: ae3051415b3b1134ba2268398672975b, type: 3}
       propertyPath: ShootForce
-      value: 100
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858947055314314429, guid: ae3051415b3b1134ba2268398672975b, type: 3}
+      propertyPath: MagazineSize
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4858947055314314429, guid: ae3051415b3b1134ba2268398672975b, type: 3}
       propertyPath: BulletsPerTap
@@ -11235,7 +11239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858947055314314429, guid: ae3051415b3b1134ba2268398672975b, type: 3}
       propertyPath: TimeBetweenShooting
-      value: 0.4
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8153676732226650674, guid: ae3051415b3b1134ba2268398672975b, type: 3}
       propertyPath: m_IsActive
