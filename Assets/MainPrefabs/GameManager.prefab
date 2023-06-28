@@ -1282,6 +1282,7 @@ MonoBehaviour:
   - {fileID: 7132238387434680192}
   - {fileID: 7509244056560957671}
   ButtonParent: {fileID: 2746666784553312445}
+  AmmoUI: {fileID: 0}
   Hammer: {fileID: 9207865123604001284}
   Pistol: {fileID: 8111106002286123277}
   AR: {fileID: 8944035257464321786}
@@ -4232,6 +4233,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5587377453437714983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7104889191909399579}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7104889191909399579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5587377453437714983}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.01, y: 0.178, z: 0.506}
+  m_LocalScale: {x: 2.794302, y: 2.794302, z: 2.794302}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8111106002286123274}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6360562157518703940
 GameObject:
   m_ObjectHideFlags: 0
