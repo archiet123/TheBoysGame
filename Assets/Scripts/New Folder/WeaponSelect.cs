@@ -7,6 +7,7 @@ public class WeaponSelect : MonoBehaviour
 {
     public WeaponChoice[] weaponChoices;
     public GameObject ButtonParent;
+    public GameObject AmmoUI;
 
     public GameObject Hammer;
     public GameObject Pistol;
@@ -43,6 +44,7 @@ public class WeaponSelect : MonoBehaviour
             ActiveWeapon.SetActive(false);
             ActiveWeapon = AR;
             ActiveWeapon.SetActive(true);
+            AmmoUI.SetActive(true);
             Debug.Log(ActiveWeapon);
         }
         else if (ID == 13)
@@ -50,6 +52,7 @@ public class WeaponSelect : MonoBehaviour
             ActiveWeapon.SetActive(false);
             ActiveWeapon = Pistol;
             ActiveWeapon.SetActive(true);
+            AmmoUI.SetActive(true);
             Debug.Log(ActiveWeapon);
         }
 
@@ -58,6 +61,7 @@ public class WeaponSelect : MonoBehaviour
             ActiveWeapon.SetActive(false);
             ActiveWeapon = Hammer;
             ActiveWeapon.SetActive(true);
+            AmmoUI.SetActive(false);
             Debug.Log(ActiveWeapon);
         }
     }
