@@ -4,22 +4,28 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    public GameObject Bullet;
     public int MaxCollisions;
     public int Collisions;
     private void Update()
     {
-        if (Collision > MaxCollisions)
+        if (Collisions > MaxCollisions)
         {
             Destroy();
         }
     }
 
+    private void Start()
+    {
+        // Destroy(gameObject, 1.5f);
+    }
     private void OnCollisionEnter(Collision Collision)
     {
         Collisions++;
     }
     private void Destroy()
     {
-        Destroy(CurrentBullet);
+        Destroy(gameObject);
+
     }
 }
