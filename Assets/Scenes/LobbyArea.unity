@@ -7378,7 +7378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1427245874
 Transform:
   m_ObjectHideFlags: 0
@@ -7472,6 +7472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c4b578793687e40b1f2fe161f289a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyHealth: 100
 --- !u!1 &1434380993
 GameObject:
   m_ObjectHideFlags: 0
@@ -8754,6 +8755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c4b578793687e40b1f2fe161f289a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyHealth: 100
 --- !u!1 &1575099899 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 473b0137a013d1b43938d57eed1e4e72, type: 3}
@@ -11135,7 +11137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2021477631
 Transform:
   m_ObjectHideFlags: 0
@@ -11229,6 +11231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c4b578793687e40b1f2fe161f289a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyHealth: 100
 --- !u!1 &2030714133
 GameObject:
   m_ObjectHideFlags: 0
@@ -11359,6 +11362,8 @@ MonoBehaviour:
   Bullet: {fileID: 2030714133}
   MaxCollisions: 1
   Collisions: 0
+  WeaponDamage: 20
+  EnemyName: {fileID: 1562410648}
 --- !u!1001 &2031215836
 PrefabInstance:
   m_ObjectHideFlags: 0

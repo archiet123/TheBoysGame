@@ -18,6 +18,7 @@ public class HealthScript : MonoBehaviour
 
     public void DealDamage(int WeaponDamage)
     {
-        EnemyHealth - int WeaponDamage;
+        EnemyHealth = EnemyHealth - WeaponDamage;
+        Debug.Log($"{gameObject} + {EnemyHealth}");
     }
 }
