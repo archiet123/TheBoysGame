@@ -8,7 +8,8 @@ public class GameStatus : MonoBehaviour
     public GameObject EnemyParent;
     void Update()
     {
-        EnemyParent.GetComponent<ActiveChilderen>().CheckLevel();
+        Debug.Log("update");
+        // EnemyParent.GetComponent<ChildCountActive>().CheckLevel();
     }
 
 

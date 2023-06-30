@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ActiveChilderen : MonoBehaviour
 {
-    public void CheckLevel()
+    void Update()
     {
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
             if (!gameObject.transform.GetChild(i).gameObject.activeInHierarchy)
             {
-                Debug.Log("empty??");
+                Debug.Log("win");
             }
         }
-        // Debug.Log("not empty??");
+        // Debug.Log("loss");
     }
 }
