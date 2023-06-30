@@ -7,6 +7,11 @@ public class BulletScript : MonoBehaviour
     public GameObject Bullet;
     public int MaxCollisions;
     public int Collisions;
+    public int WeaponDamage;
+    public GameObject EnemyName;
+    string GetName;
+
+
     private void Update()
     {
         if (Collisions > MaxCollisions)
@@ -22,6 +27,17 @@ public class BulletScript : MonoBehaviour
     private void OnCollisionEnter(Collision Collision)
     {
         Collisions++;
+        // Debug.Log("collided with" + Collision.gameObject.name); checking to see what the bullet actually collides with
+        if (Collision.gameObject.tag == "Enemy")
+        {
+            //get the name of the gameobject the bullet collided with and call the function DealDamage on the,
+            //gameobjects script
+            GetName = Collision.gameObject.name;
+            EnemyName = new GameObject(GetName);
+            Debug.Log("collided with " + EnemyName);
+            // EnemyName.GetComponent<HealthScript>().DealDamage(WeaponDamage);
+
+        }
     }
     private void Destroy()
     {
