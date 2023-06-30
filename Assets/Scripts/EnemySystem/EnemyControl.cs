@@ -9,6 +9,8 @@ public class EnemyControl : MonoBehaviour {
 
     public float timeBetweenAttacks;
     bool alreadyAttacked;
+    public GameObject Bullet;
+    public Transform AttackPoint;
 
     Transform target;
     NavMeshAgent agent;
@@ -40,7 +42,9 @@ public class EnemyControl : MonoBehaviour {
     {
         if (!alreadyAttacked)
         {
-            // attack code here
+            
+            Rigidbody rb = Instantiate(Bullet, AttackPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
             
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
