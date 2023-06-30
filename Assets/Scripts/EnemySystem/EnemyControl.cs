@@ -7,6 +7,9 @@ public class EnemyControl : MonoBehaviour {
     
     public float lookRadius = 10f;
 
+    public float timeBetweenAttacks;
+    bool alreadyAttacked;
+
     Transform target;
     NavMeshAgent agent;
     
@@ -28,9 +31,25 @@ public class EnemyControl : MonoBehaviour {
             if (distance <= agent.stoppingDistance)
             {
                 FaceTarget();
-                //attack the target (add once we get combat features working)
+                AttackPlayer();
             }
         }
+    }
+
+    private void AttackPlayer()
+    {
+        if (!alreadyAttacked)
+        {
+            // attack code here
+            
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
+    }
+
+    private void ResetAttack()
+    {
+        alreadyAttacked = false;
     }
 
     void FaceTarget ()
