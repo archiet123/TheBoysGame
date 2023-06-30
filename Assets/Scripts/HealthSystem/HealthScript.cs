@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HealthScript : MonoBehaviour
 {
-    // public GameObject Enemies;
     public int EnemyHealth;
 
 
@@ -19,6 +18,6 @@ public class HealthScript : MonoBehaviour
     public void DealDamage(int WeaponDamage)
     {
         EnemyHealth = EnemyHealth - WeaponDamage;
-        Debug.Log($"{gameObject} Health: {EnemyHealth}");
+        // Debug.Log($"{gameObject} Health: {EnemyHealth}");
     }
 }

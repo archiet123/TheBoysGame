@@ -7483,7 +7483,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.2
-  m_Speed: 5
+  m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -8741,7 +8741,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.2
-  m_Speed: 5
+  m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -11312,7 +11312,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.2
-  m_Speed: 5
+  m_Speed: 10
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -11468,7 +11468,7 @@ MonoBehaviour:
   MaxCollisions: 0
   Collisions: 0
   WeaponDamage: 20
-  RedEnemy: {fileID: 1562410648}
+  EnemyDamage: 20
 --- !u!1001 &2031215836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11772,6 +11772,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -74.256
       objectReference: {fileID: 0}
+    - target: {fileID: 2746666783333131225, guid: ae3051415b3b1134ba2268398672975b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746666783488844055, guid: ae3051415b3b1134ba2268398672975b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2746666783795622254, guid: ae3051415b3b1134ba2268398672975b, type: 3}
       propertyPath: AmmoUI
       value: 
@@ -11850,7 +11858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8111106002286123277, guid: ae3051415b3b1134ba2268398672975b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8153676732226650674, guid: ae3051415b3b1134ba2268398672975b, type: 3}
       propertyPath: m_IsActive
@@ -11858,7 +11866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8944035257464321786, guid: ae3051415b3b1134ba2268398672975b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9207865123604001284, guid: ae3051415b3b1134ba2268398672975b, type: 3}
       propertyPath: m_IsActive
@@ -11882,3 +11890,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2746666783333131225, guid: ae3051415b3b1134ba2268398672975b, type: 3}
   m_PrefabInstance: {fileID: 4858947054716172620}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7309461462876297883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7309461462876297877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b09493090e28a45b819566fd03a827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyControl : MonoBehaviour {
-    
+public class EnemyControl : MonoBehaviour
+{
+
     public float lookRadius = 10f;
 
     public float timeBetweenAttacks;
@@ -14,16 +15,18 @@ public class EnemyControl : MonoBehaviour {
 
     Transform target;
     NavMeshAgent agent;
-    
+
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         target = PlayerTracker.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
-        
+
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         float distance = Vector3.Distance(target.position, transform.position);
 
         if (distance <= lookRadius)
@@ -42,10 +45,10 @@ public class EnemyControl : MonoBehaviour {
     {
         if (!alreadyAttacked)
         {
-            
+
             Rigidbody rb = Instantiate(Bullet, AttackPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            
+            rb.AddForce(transform.forward * 50f, ForceMode.Impulse);
+
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -56,14 +59,14 @@ public class EnemyControl : MonoBehaviour {
         alreadyAttacked = false;
     }
 
-    void FaceTarget ()
+    void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
-    void OnDrawGizomsSelected () 
+    void OnDrawGizomsSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
