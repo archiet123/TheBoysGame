@@ -8680,7 +8680,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!136 &1562410651
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11360,7 +11360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 2030714133}
-  MaxCollisions: 1
+  MaxCollisions: 0
   Collisions: 0
   WeaponDamage: 20
   EnemyName: {fileID: 1562410648}

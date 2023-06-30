@@ -35,7 +35,7 @@ public class BulletScript : MonoBehaviour
             GetName = Collision.gameObject.name;
             EnemyName = new GameObject(GetName);
             Debug.Log("collided with " + EnemyName);
-            EnemyName.GetComponent<HealthScript>().DealDamage(WeaponDamage);
+            // EnemyName.GetComponent<HealthScript>().DealDamage(WeaponDamage);
 
         }
     }
