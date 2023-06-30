@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void DealDamage(int EnemyDamage)
     {
+        Debug.Log("test");
         Health = Health - EnemyDamage;
         // Debug.Log($"{gameObject} Health: {Health}");
     }
