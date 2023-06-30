@@ -10,7 +10,7 @@ public class HealthScript : MonoBehaviour
 
     void Update()
     {
-        if (EnemyHealth < 0)
+        if (EnemyHealth <= 0)
         {
             gameObject.SetActive(false);
         }
@@ -19,6 +19,6 @@ public class HealthScript : MonoBehaviour
     public void DealDamage(int WeaponDamage)
     {
         EnemyHealth = EnemyHealth - WeaponDamage;
-        Debug.Log($"{gameObject} + {EnemyHealth}");
+        Debug.Log($"{gameObject} Health: {EnemyHealth}");
     }
 }
