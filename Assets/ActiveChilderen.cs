@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ActiveChilderen : MonoBehaviour
 {
-    void Update()
+
+    int ChildCount;
+    int ActiveCount;
+    void Start()
     {
-        for (int i = 0; i < gameObject.transform.childCount; i++)
-        {
-            if (!gameObject.transform.GetChild(i).gameObject.activeInHierarchy)
-            {
-                Debug.Log("win");
-            }
-        }
-        // Debug.Log("loss");
+        ChildCount = transform.childCount;
+        Debug.Log(ChildCount);
     }
+    public void CheckLevel()
+    {
+
+    }
+
 }

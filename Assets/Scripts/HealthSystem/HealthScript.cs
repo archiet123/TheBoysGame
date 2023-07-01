@@ -6,6 +6,7 @@ public class HealthScript : MonoBehaviour
 {
     public int EnemyHealth;
     public GameObject GameManager;
+    public int DeadEnemyCount;
 
 
     void Update()
@@ -13,7 +14,7 @@ public class HealthScript : MonoBehaviour
         if (EnemyHealth <= 0)
         {
             gameObject.SetActive(false);
-            // GameManager.GetComponent<GameStatus>();
+            DeadEnemyCount++;
         }
     }
 
