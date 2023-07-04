@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthScript : MonoBehaviour
+public class HealthScript : HealthVariables
 {
     public int EnemyHealth;
     public GameObject GameManager;
-    public int DeadEnemyCount;
-
-
+    // public int DeadEnemyCount;
     void Update()
     {
         if (EnemyHealth <= 0)
         {
             gameObject.SetActive(false);
-            DeadEnemyCount++;
+            DeadEnemyCount = DeadEnemyCount + 1;
+            Debug.Log($"enemy script: {DeadEnemyCount}");
         }
     }
 
