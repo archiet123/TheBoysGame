@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthScript : ActiveChilderen
+public class HealthScript : MonoBehaviour
 {
     public int EnemyHealth;
-    public GameObject GameManager;
-
+    public int DeadEnemyCount;
+    public ActiveChilderen anotherScript;
     void Update()
     {
         CheckEnemyHealth();
+    }
+
+    void Start()
+    {
+        anotherScript = GameObject.Find("Enemies").GetComponent<ActiveChilderen>();
     }
 
     public void CheckEnemyHealth()
@@ -18,7 +23,9 @@ public class HealthScript : ActiveChilderen
         {
             gameObject.SetActive(false);
             DeadEnemyCount++;
-            Debug.Log($"enemy script: {DeadEnemyCount}");
+            // Debug.Log($"enemy script: {DeadEnemyCount}");
+            anotherScript.sendValue(DeadEnemyCount); //send your value to another script
+
         }
     }
 

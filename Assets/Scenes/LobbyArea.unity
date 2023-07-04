@@ -7507,8 +7507,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c4b578793687e40b1f2fe161f289a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeadEnemyCount: 0
   EnemyHealth: 100
-  GameManager: {fileID: 1477812466}
 --- !u!1 &1434380993
 GameObject:
   m_ObjectHideFlags: 0
@@ -8085,24 +8085,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1550514412580984892, guid: 656958edc9157fa448629b252f387e43, type: 3}
---- !u!1 &1477812466 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2746666784780796173, guid: ae3051415b3b1134ba2268398672975b, type: 3}
-  m_PrefabInstance: {fileID: 4858947054716172620}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1477812472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1477812466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1257637241288e9408da9195db590dc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemyParent: {fileID: 1660022174}
 --- !u!1001 &1509487606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8813,8 +8795,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c4b578793687e40b1f2fe161f289a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeadEnemyCount: 0
   EnemyHealth: 100
-  GameManager: {fileID: 1477812466}
 --- !u!1 &1575099899 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 473b0137a013d1b43938d57eed1e4e72, type: 3}
@@ -9111,6 +9093,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1660022175}
   - component: {fileID: 1660022176}
+  - component: {fileID: 1660022178}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -9148,6 +9131,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996b94a02df752647a79714dc2aafa56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeadEnemyCount: 0
+--- !u!114 &1660022178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660022174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c4b578793687e40b1f2fe161f289a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeadEnemyCount: 0
+  EnemyHealth: 100
 --- !u!1001 &1661768394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11369,8 +11367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c4b578793687e40b1f2fe161f289a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeadEnemyCount: 0
   EnemyHealth: 100
-  GameManager: {fileID: 1477812466}
 --- !u!1 &2030714133
 GameObject:
   m_ObjectHideFlags: 0
@@ -11798,6 +11796,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -9.74
       objectReference: {fileID: 0}
+    - target: {fileID: 1579555396188726654, guid: ae3051415b3b1134ba2268398672975b, type: 3}
+      propertyPath: EnemyParent
+      value: 
+      objectReference: {fileID: 1660022174}
     - target: {fileID: 2417955268529115937, guid: ae3051415b3b1134ba2268398672975b, type: 3}
       propertyPath: m_Color.a
       value: 0
