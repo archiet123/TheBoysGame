@@ -30,6 +30,10 @@ public class GunScript : MonoBehaviour
 
     public bool AllowInvoke = true;
 
+    //audio definitions
+    public AudioSource audioSource;
+    public AudioSource audioSource1;
+
     private void Awake()
     {
         BulletsLeft = MagazineSize;
@@ -77,6 +81,9 @@ public class GunScript : MonoBehaviour
 
     private void Shoot()
     {
+        //audio stuff here
+        audioSource.Play();
+
         ReadyToShoot = false;
 
         Ray ray = PlayerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0.5f));
@@ -131,6 +138,7 @@ public class GunScript : MonoBehaviour
 
     private void Reload()
     {
+        audioSource1.Play();
         Reloading = true;
         Invoke("ReloadFinished", ReloadTime);
     }
