@@ -7507,8 +7507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c4b578793687e40b1f2fe161f289a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeadEnemyCount: 0
   EnemyHealth: 100
+  DeadEnemyCount: 0
+  anotherScript: {fileID: 0}
 --- !u!1 &1434380993
 GameObject:
   m_ObjectHideFlags: 0
@@ -8795,8 +8796,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c4b578793687e40b1f2fe161f289a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeadEnemyCount: 0
   EnemyHealth: 100
+  DeadEnemyCount: 0
+  anotherScript: {fileID: 0}
 --- !u!1 &1575099899 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 473b0137a013d1b43938d57eed1e4e72, type: 3}
@@ -9093,7 +9095,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1660022175}
   - component: {fileID: 1660022176}
-  - component: {fileID: 1660022178}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -9131,21 +9132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996b94a02df752647a79714dc2aafa56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeadEnemyCount: 0
---- !u!114 &1660022178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660022174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0c4b578793687e40b1f2fe161f289a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeadEnemyCount: 0
-  EnemyHealth: 100
+  ActiveCount: 0
 --- !u!1001 &1661768394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11367,8 +11354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c4b578793687e40b1f2fe161f289a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeadEnemyCount: 0
   EnemyHealth: 100
+  DeadEnemyCount: 0
+  anotherScript: {fileID: 0}
 --- !u!1 &2030714133
 GameObject:
   m_ObjectHideFlags: 0
