@@ -32,7 +32,7 @@ public class ActiveChilderen : MonoBehaviour
     {
         if (ChildCount == ActiveCount)
         {
-            // Debug.Log("you win");
+            Debug.Log("you win");
             // return true;
         }
     }
