@@ -18,7 +18,7 @@ public class WeaponSelect : MonoBehaviour
     void Start()
     {
         ActiveWeapon = Hammer;
-        Debug.Log(ActiveWeapon);
+        // Debug.Log(ActiveWeapon);
     }
 
     private void OnEnable()
@@ -38,14 +38,14 @@ public class WeaponSelect : MonoBehaviour
 
     private void SelectWeapon(int ID)
     {
-        Debug.Log(ID);
+        // Debug.Log(ID);
         if (ID == 1)
         {
             ActiveWeapon.SetActive(false);
             ActiveWeapon = AR;
             ActiveWeapon.SetActive(true);
             AmmoUI.SetActive(true);
-            Debug.Log(ActiveWeapon);
+            // Debug.Log(ActiveWeapon);
         }
         else if (ID == 13)
         {
@@ -53,7 +53,7 @@ public class WeaponSelect : MonoBehaviour
             ActiveWeapon = Pistol;
             ActiveWeapon.SetActive(true);
             AmmoUI.SetActive(true);
-            Debug.Log(ActiveWeapon);
+            // Debug.Log(ActiveWeapon);
         }
 
         else if (ID == 0)
@@ -62,7 +62,7 @@ public class WeaponSelect : MonoBehaviour
             ActiveWeapon = Hammer;
             ActiveWeapon.SetActive(true);
             AmmoUI.SetActive(false);
-            Debug.Log(ActiveWeapon);
+            // Debug.Log(ActiveWeapon);
         }
     }
 }

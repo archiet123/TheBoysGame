@@ -2340,6 +2340,7 @@ GameObject:
   - component: {fileID: 2746666784780796274}
   - component: {fileID: 2746666784780796273}
   - component: {fileID: 4858947054234489499}
+  - component: {fileID: 1579555396188726654}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2419,6 +2420,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2746666783333131225}
+--- !u!114 &1579555396188726654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2746666784780796173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1257637241288e9408da9195db590dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyParent: {fileID: 0}
 --- !u!1 &2746666785048377985
 GameObject:
   m_ObjectHideFlags: 0
@@ -6169,6 +6183,10 @@ PrefabInstance:
     - target: {fileID: 4279864313661221110, guid: 399a0b32536aba145af017a9b82666c2, type: 3}
       propertyPath: m_Name
       value: Gun1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613128571305859210, guid: 399a0b32536aba145af017a9b82666c2, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 399a0b32536aba145af017a9b82666c2, type: 3}
