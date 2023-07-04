@@ -8,7 +8,7 @@ public class ActiveChilderen : MonoBehaviour
 
     int ChildCount;
     int ActiveCount;
-
+    public int DeadEnemyCount;
     void Start()
     {
         ChildCount = transform.childCount;
@@ -16,9 +16,7 @@ public class ActiveChilderen : MonoBehaviour
     }
     public void CheckLevel()
     {
-        int Count = gameObject.GetComponent<HealthVariables>().DeadEnemyCount;
-        // GameObject.Find("nameOfObjectYourScriptIsOn").GetComponent<move>().speed
-        // Debug.Log(Count);
+        Debug.Log(DeadEnemyCount);
     }
 
 }

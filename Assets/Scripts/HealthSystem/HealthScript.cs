@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthScript : HealthVariables
+public class HealthScript : ActiveChilderen
 {
     public int EnemyHealth;
     public GameObject GameManager;
-    // public int DeadEnemyCount;
+
     void Update()
+    {
+        CheckEnemyHealth();
+    }
+
+    public void CheckEnemyHealth()
     {
         if (EnemyHealth <= 0)
         {
             gameObject.SetActive(false);
-            DeadEnemyCount = DeadEnemyCount + 1;
+            DeadEnemyCount++;
             Debug.Log($"enemy script: {DeadEnemyCount}");
         }
     }
