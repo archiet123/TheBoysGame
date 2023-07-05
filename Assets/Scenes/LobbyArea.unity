@@ -12216,6 +12216,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1235956512668591033, guid: dcc6dc18d90462c4fa607b713195be42, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026279542887749489, guid: dcc6dc18d90462c4fa607b713195be42, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2553295478535832886, guid: dcc6dc18d90462c4fa607b713195be42, type: 3}
       propertyPath: Bullet
       value: 
@@ -12235,7 +12243,7 @@ PrefabInstance:
     - target: {fileID: 2553295478535832886, guid: dcc6dc18d90462c4fa607b713195be42, type: 3}
       propertyPath: MuzzleFlash
       value: 
-      objectReference: {fileID: 869776794}
+      objectReference: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
     - target: {fileID: 2553295478535832886, guid: dcc6dc18d90462c4fa607b713195be42, type: 3}
       propertyPath: audioSource
       value: 
@@ -12256,6 +12264,10 @@ PrefabInstance:
       propertyPath: AmmoDisplay
       value: 
       objectReference: {fileID: 723502205}
+    - target: {fileID: 2553295479214703110, guid: dcc6dc18d90462c4fa607b713195be42, type: 3}
+      propertyPath: MuzzleFlash
+      value: 
+      objectReference: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
     - target: {fileID: 2553295479214703110, guid: dcc6dc18d90462c4fa607b713195be42, type: 3}
       propertyPath: audioSource
       value: 
