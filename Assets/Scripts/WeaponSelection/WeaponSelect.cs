@@ -56,7 +56,7 @@ public class WeaponSelect : MonoBehaviour
             // Debug.Log(ActiveWeapon);
         }
 
-        else if (ID == 0)
+        else if (ID == 4)
         {
             ActiveWeapon.SetActive(false);
             ActiveWeapon = Hammer;
