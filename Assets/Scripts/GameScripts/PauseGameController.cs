@@ -11,7 +11,7 @@ public class PauseGameController : MonoBehaviour
 
     //need to be static
     //this will receive variable
-    public static ActiveChilderen DisableUI;
+    public static PauseGameController DisableUI;
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class PauseGameController : MonoBehaviour
 
         if (DisableUI == null)
         {
-            DisableUI = new ActiveChilderen();
+            DisableUI = new PauseGameController();
         }
     }
 
