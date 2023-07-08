@@ -7,6 +7,7 @@ public class PauseGameController : MonoBehaviour
     public static bool isPaused = false;
     public GameObject pauseMenu;
     public GameObject player;
+    //get ui active varible
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class PauseGameController : MonoBehaviour
 
     void Update()
     {
+        //if new variable true then avoid running this.
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
