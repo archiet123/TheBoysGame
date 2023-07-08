@@ -16,7 +16,7 @@ public class PauseGameController : MonoBehaviour
     void Start()
     {
         isPaused = false;
-        pauseMenu.SetActive(false);
+        // pauseMenu.SetActive(false);
 
         if (DisableUI == null)
         {
@@ -26,7 +26,9 @@ public class PauseGameController : MonoBehaviour
 
     void Update()
     {
-        sendValue(DisablePause);
+        // sendValue(DisablePause);
+        // Debug.Log(DisablePause);
+
     }
 
     public void PauseGame()
@@ -55,6 +57,7 @@ public class PauseGameController : MonoBehaviour
         if (DisablePause)
         {
             Debug.Log("DisablePause");
+
         }
         else
         {

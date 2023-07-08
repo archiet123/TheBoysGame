@@ -13,7 +13,7 @@ public class GunBenchScript : GunbenchInteractable
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            HideUI();
+            // HideUI();
         }
     }
 
@@ -25,7 +25,7 @@ public class GunBenchScript : GunbenchInteractable
         IsShown = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        DisablePause = false;
+        DisablePause = true;
         UIToDisable.sendValue(DisablePause);
     }
 }

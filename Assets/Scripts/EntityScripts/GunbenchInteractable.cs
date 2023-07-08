@@ -63,6 +63,7 @@ public class GunbenchInteractable : MonoBehaviour, IInteractable
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         DisablePause = true;
+        Debug.Log($"should be true: {DisablePause}");
         UIToDisable.sendValue(DisablePause); //send your value to another script
     }
     public string GetInteractText()
