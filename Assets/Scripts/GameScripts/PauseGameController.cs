@@ -26,7 +26,7 @@ public class PauseGameController : MonoBehaviour
 
     void Update()
     {
-        // sendValue(DisablePause);
+        sendValue(DisablePause);
         // Debug.Log(DisablePause);
 
     }
@@ -73,7 +73,6 @@ public class PauseGameController : MonoBehaviour
                 }
             }
         }
-
     }
 }
 
