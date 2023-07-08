@@ -7,28 +7,26 @@ public class PauseGameController : MonoBehaviour
     public static bool isPaused = false;
     public GameObject pauseMenu;
     public GameObject player;
-    //get ui active varible
+    public bool DisablePause;
+
+    //need to be static
+    //this will receive variable
+    public static ActiveChilderen DisableUI;
 
     void Start()
     {
         isPaused = false;
         pauseMenu.SetActive(false);
+
+        if (DisableUI == null)
+        {
+            DisableUI = new ActiveChilderen();
+        }
     }
 
     void Update()
     {
-        //if new variable true then avoid running this.
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
-            }
-        }
+        sendValue(DisablePause);
     }
 
     public void PauseGame()
@@ -50,5 +48,30 @@ public class PauseGameController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
+    public void sendValue(bool DisablePause)
+    {
+        // if new variable true then avoid running this.
+        if (DisablePause)
+        {
+            Debug.Log("DisablePause");
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (isPaused)
+                {
+                    ResumeGame();
+                }
+                else
+                {
+                    PauseGame();
+                }
+            }
+        }
+
+    }
 }
+
 

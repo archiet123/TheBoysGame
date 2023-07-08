@@ -7,11 +7,17 @@ public class GunbenchInteractable : MonoBehaviour, IInteractable
     public GameObject GunBenchUI;
     public GameObject player;
     public static bool IsShown;
-
+    public PauseGameController UIToDisable;
+    public bool DisablePause;
     void Start()
     {
         IsShown = false;
-        // GunBenchUI.SetActive(false);
+        UIToDisable = GameObject.Find("GameManager").GetComponent<PauseGameController>();
+    }
+
+    void Update()
+    {
+        // Debug.Log(DisablePause);
     }
 
     private void ToggleBenchUI()
@@ -23,7 +29,9 @@ public class GunbenchInteractable : MonoBehaviour, IInteractable
         }
         else
         {
-            CloseGunbench();
+            // CloseGunbench();
+            //not sure why this does not work
+            //this is bad code
         }
     }
     public void UseGunBench()
@@ -41,6 +49,8 @@ public class GunbenchInteractable : MonoBehaviour, IInteractable
         player.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        DisablePause = false;
+        UIToDisable.sendValue(DisablePause);
     }
 
     public void OpenGunbench()
@@ -52,6 +62,8 @@ public class GunbenchInteractable : MonoBehaviour, IInteractable
         player.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        DisablePause = true;
+        UIToDisable.sendValue(DisablePause); //send your value to another script
     }
     public string GetInteractText()
     {
