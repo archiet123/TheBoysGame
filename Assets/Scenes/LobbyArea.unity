@@ -2945,6 +2945,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GunBenchUI: {fileID: 7309461462543042599}
   player: {fileID: 7309461462876297877}
+  UIToDisable: {fileID: 0}
+  DisablePause: 0
 --- !u!65 &510574987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3146,6 +3148,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 473b0137a013d1b43938d57eed1e4e72, type: 3}
+--- !u!114 &553958870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2802360614096875360, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+  m_PrefabInstance: {fileID: 2802360615469780602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &569957021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10545,6 +10558,17 @@ Transform:
   m_Father: {fileID: 1562410649}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1867004250 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2802360615335463734, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+  m_PrefabInstance: {fileID: 2802360615469780602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1879796767 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 543677394c450c747a9f70a45280a86c, type: 3}
@@ -12072,9 +12096,21 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 8006343357733720543, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
+      propertyPath: key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006343357733720543, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 7309461462876297877}
+    - target: {fileID: 8006343357733720543, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
       propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 348421467420657310}
+    - target: {fileID: 8006343357733720543, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
+      propertyPath: BackButton
+      value: 
+      objectReference: {fileID: 1867004250}
     - target: {fileID: 8006343357733720543, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
       propertyPath: OptionsMenu
       value: 
@@ -12245,6 +12281,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7309461463745230917}
+    - target: {fileID: 2802360614096875367, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 7309461462876297877}
+    - target: {fileID: 2802360614096875367, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+      propertyPath: BackButton
+      value: 
+      objectReference: {fileID: 553958870}
     - target: {fileID: 2802360615335463734, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -12561,6 +12605,14 @@ PrefabInstance:
     - target: {fileID: 1499293770851756683, guid: efba3a5be2bf5ea4b8096e148109d70d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499293770966564729, guid: efba3a5be2bf5ea4b8096e148109d70d, type: 3}
+      propertyPath: SensX
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499293770966564729, guid: efba3a5be2bf5ea4b8096e148109d70d, type: 3}
+      propertyPath: SensY
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1499293770966564729, guid: efba3a5be2bf5ea4b8096e148109d70d, type: 3}
       propertyPath: Orientation
