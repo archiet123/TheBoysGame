@@ -17,7 +17,7 @@ public class DisplayOptions : MonoBehaviour
             // BackButton.onClick.Invoke();
             // var eventSystem = EventSystem.current;//setting event system
             // ExecuteEvents.Execute(BackButton.gameObject, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
-            HideOptions();
+            // HideOptions();
         }
     }
 
@@ -30,10 +30,6 @@ public class DisplayOptions : MonoBehaviour
     public void HideOptions()
     {
         OptionsMenu.SetActive(false);
-        // PauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        player.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        PauseMenu.SetActive(true);
     }
 }
