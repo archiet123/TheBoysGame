@@ -31,8 +31,8 @@ public class GunScript : MonoBehaviour
     public bool AllowInvoke = true;
 
     //audio definitions
-    public AudioSource audioSource;
-    public AudioSource audioSource1;
+    public AudioSource ShootFX;
+    public AudioSource ReloadFX;
 
     private void Awake()
     {
@@ -82,7 +82,7 @@ public class GunScript : MonoBehaviour
     private void Shoot()
     {
         //audio stuff here
-        audioSource.Play();
+        ShootFX.Play();
 
         ReadyToShoot = false;
 
@@ -138,7 +138,7 @@ public class GunScript : MonoBehaviour
 
     private void Reload()
     {
-        audioSource1.Play();
+        ReloadFX.Play();
         Reloading = true;
         Invoke("ReloadFinished", ReloadTime);
     }

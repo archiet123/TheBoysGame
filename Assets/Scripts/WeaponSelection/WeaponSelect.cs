@@ -12,6 +12,8 @@ public class WeaponSelect : MonoBehaviour
     public GameObject Hammer;
     public GameObject Pistol;
     public GameObject AR;
+    public GameObject Donut;
+    public GameObject Phish;
     GameObject ActiveWeapon;
 
 
@@ -55,11 +57,28 @@ public class WeaponSelect : MonoBehaviour
             AmmoUI.SetActive(true);
             // Debug.Log(ActiveWeapon);
         }
+        else if (ID == 3)
+        {
+            ActiveWeapon.SetActive(false);
+            ActiveWeapon = Donut;
+            ActiveWeapon.SetActive(true);
+            AmmoUI.SetActive(false);
+            // Debug.Log(ActiveWeapon);
+        }
 
         else if (ID == 4)
         {
             ActiveWeapon.SetActive(false);
             ActiveWeapon = Hammer;
+            ActiveWeapon.SetActive(true);
+            AmmoUI.SetActive(false);
+            // Debug.Log(ActiveWeapon);
+        }
+
+        else if (ID == 5)
+        {
+            ActiveWeapon.SetActive(false);
+            ActiveWeapon = Phish;
             ActiveWeapon.SetActive(true);
             AmmoUI.SetActive(false);
             // Debug.Log(ActiveWeapon);
