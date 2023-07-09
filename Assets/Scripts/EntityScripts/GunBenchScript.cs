@@ -8,61 +8,56 @@ public class GunBenchScript : MonoBehaviour, IInteractable
     public GameObject player;
     public GameObject GunBenchUI;
     public UIController RecipientScript;
-
-
     //bools
-    public static bool IsShown = false;
+    [SerializeField] public static bool IsShown = false;
 
-    void Start()
+    public void GetBool(bool DisablePauseMenu)
     {
-        RecipientScript = GameObject.Find("GameManger").GetComponent<UIController>();
-    }
-
-    void Update()
-    {
-        // Debug.Log($"should be false: {IsShown}");
+        IsShown = DisablePauseMenu;
     }
 
     private void ToggleBenchUI()
     {
-        // Debug.Log("got input");
-        IsShown = !IsShown;
-        if (IsShown)
+        FindObjectOfType<UIController>().GetBool(IsShown);
+        if (!IsShown)
         {
-            // Debug.Log("open");
             OpenGunbench();
-            RecipientScript.GetBool(IsShown); //send your value to another script
+            Debug.Log("open bench");
+            FindObjectOfType<UIController>().GetBool(IsShown);
         }
         else
         {
-            // Debug.Log("close");
             CloseGunbench();
+            Debug.Log("close bench");
+            FindObjectOfType<UIController>().GetBool(IsShown);
         }
     }
     public void CloseGunbench()
     {
-
+        // Debug.Log("close");
         GunBenchUI.SetActive(false);
         Time.timeScale = 1f;
         IsShown = false;
         player.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
+        IsShown = false;
     }
 
     public void OpenGunbench()
     {
-
+        // Debug.Log("open");
         GunBenchUI.SetActive(true);
         Time.timeScale = 0f;
         IsShown = true;
+        // player.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
     }
     public void UseGunBench()
     {
+        Debug.Log("Bench Toggled");
         ToggleBenchUI();
     }
 
