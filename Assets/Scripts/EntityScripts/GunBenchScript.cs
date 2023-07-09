@@ -4,27 +4,38 @@ using UnityEngine;
 
 public class GunBenchScript : MonoBehaviour, IInteractable
 {
-    //this script is to be the gun bench interactable
+    //GameObjects
     public GameObject player;
     public GameObject GunBenchUI;
+    public UIController RecipientScript;
+
+
+    //bools
     public static bool IsShown = false;
+
+    void Start()
+    {
+        RecipientScript = GameObject.Find("GameManger").GetComponent<UIController>();
+    }
 
     void Update()
     {
-        Debug.Log(IsShown);
+        Debug.Log($"should be false: {IsShown}");
     }
+
     private void ToggleBenchUI()
     {
         Debug.Log("got input");
         IsShown = !IsShown;
         if (IsShown)
         {
-            Debug.Log("open");
+            // Debug.Log("open");
             OpenGunbench();
+            RecipientScript.GetBool(IsShown); //send your value to another script
         }
         else
         {
-            Debug.Log("close");
+            // Debug.Log("close");
             CloseGunbench();
         }
     }
