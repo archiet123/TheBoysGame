@@ -12,52 +12,37 @@ public class UIController : MonoBehaviour
     public GameObject OptionsMenu;
 
     //bools
-    public static bool isPaused = false;
-    public bool DisablePauseMenu;
-
-    //this script
-    public static UIController Current;
-
-    public void Start()
-    {
-        if (Current == null)
-        {
-            Current = new UIController();
-        }
-    }
+    public static bool isPaused;
+    [SerializeField] public static bool DisablePauseMenu = false;
 
     public void Update()
     {
-        Debug.Log($"{DisablePauseMenu}");
         GetInput();
     }
 
     public void GetBool(bool IsShown)
     {
-        Debug.Log($"should be true: {IsShown}");
         DisablePauseMenu = IsShown;
     }
 
     private void GetInput()
     {
+
         if (!DisablePauseMenu)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Debug.Log("got input");
                 if (isPaused)
                 {
-                    // Debug.Log("resume");
                     ResumeGame();
                 }
                 else
                 {
-                    // Debug.Log("pause");
                     PauseGame();
                 }
             }
         }
-        else
+        else if (DisablePauseMenu)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -67,7 +52,13 @@ public class UIController : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 DisablePauseMenu = false;
+                Debug.Log("close bench");
+                FindObjectOfType<GunBenchScript>().GetBool(DisablePauseMenu);
             }
+        }
+        else
+        {
+            Debug.Log("error");
         }
     }
 
@@ -89,5 +80,6 @@ public class UIController : MonoBehaviour
         player.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
     }
 }
