@@ -2,29 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Threading;
+
 public class UIController : MonoBehaviour, IInteractable
 {
-
-    //UI
+    //UI   
     public GameObject pauseMenu;
     public GameObject player;
     public GameObject GunBenchUI;
     public GameObject OptionsMenu;
 
-    //gameobjects
-    public Button BackButton;
-
     //bools
-    public bool DisablePause;
     public static bool isPaused = false;
-    public static bool IsShown;
+    public static bool IsShown = false;
 
     void Start()
     {
-        // pauseMenu.SetActive(false);
-        IsShown = false;
-        isPaused = false;
+        // isPaused = false;
     }
 
     void Update()
@@ -49,6 +42,7 @@ public class UIController : MonoBehaviour, IInteractable
             }
         }
     }
+
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
@@ -68,6 +62,7 @@ public class UIController : MonoBehaviour, IInteractable
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
 
     private void ToggleBenchUI()
     {
@@ -105,29 +100,27 @@ public class UIController : MonoBehaviour, IInteractable
         return transform;
     }
 
-
-
     public void CloseGunbench()
     {
-        // Debug.Log("close");
-        // GunBenchUI.SetActive(false);
-        // Time.timeScale = 1f;
-        // IsShown = false;
-        // player.SetActive(true);
-        // Cursor.lockState = CursorLockMode.Locked;
-        // Cursor.visible = false;
-        // DisablePause = false;
+        Debug.Log("close");
+        GunBenchUI.SetActive(false);
+        Time.timeScale = 1f;
+        IsShown = false;
+        player.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
     }
 
     public void OpenGunbench()
     {
-        // Debug.Log("open");
-        // GunBenchUI.SetActive(true);
-        // Time.timeScale = 0f;
-        // IsShown = true;
-        // player.SetActive(false);
-        // Cursor.lockState = CursorLockMode.None;
-        // Cursor.visible = true;
-        // DisablePause = true;
+        Debug.Log("open");
+        GunBenchUI.SetActive(true);
+        Time.timeScale = 0f;
+        IsShown = true;
+        player.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
     }
 }
