@@ -13,11 +13,11 @@ public class UIController : MonoBehaviour
 
     //bools
     public static bool isPaused = false;
-    public static bool IsShown = false;
+
 
     void Start()
     {
-        // isPaused = false;
+
     }
 
     void Update()
@@ -29,15 +29,15 @@ public class UIController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("got input");
+            // Debug.Log("got input");
             if (isPaused)
             {
-                Debug.Log("resume");
+                // Debug.Log("resume");
                 ResumeGame();
             }
             else
             {
-                Debug.Log("pause");
+                // Debug.Log("pause");
                 PauseGame();
             }
         }
@@ -61,66 +61,5 @@ public class UIController : MonoBehaviour
         player.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-    }
-
-
-    private void ToggleBenchUI()
-    {
-        IsShown = !IsShown;
-        if (IsShown)
-        {
-            OpenGunbench();
-        }
-        else
-        {
-            CloseGunbench();
-            //not sure why this does not work
-            //this is bad code
-        }
-    }
-    public void UseGunBench()
-    {
-        // Debug.Log("Bench Toggled");
-        ToggleBenchUI();
-    }
-
-
-    public string GetInteractText()
-    {
-        return "Use Gunbench";
-    }
-
-    void IInteractable.Interact(Transform InteractorTransform)
-    {
-        UseGunBench();
-    }
-
-    public Transform GetTransform()
-    {
-        return transform;
-    }
-
-    public void CloseGunbench()
-    {
-        Debug.Log("close");
-        GunBenchUI.SetActive(false);
-        Time.timeScale = 1f;
-        IsShown = false;
-        player.SetActive(true);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-    }
-
-    public void OpenGunbench()
-    {
-        Debug.Log("open");
-        GunBenchUI.SetActive(true);
-        Time.timeScale = 0f;
-        IsShown = true;
-        player.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
     }
 }
