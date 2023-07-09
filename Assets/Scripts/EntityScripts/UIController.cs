@@ -13,6 +13,7 @@ public class UIController : MonoBehaviour
 
     //bools
     public static bool isPaused = false;
+    public bool DisablePauseMenu;
 
     //this script
     public static UIController Current;
@@ -27,28 +28,45 @@ public class UIController : MonoBehaviour
 
     public void Update()
     {
+        Debug.Log($"{DisablePauseMenu}");
         GetInput();
     }
 
     public void GetBool(bool IsShown)
     {
-        Debug.Log($"should be trueasdhfasduf: {IsShown}");
+        Debug.Log($"should be true: {IsShown}");
+        DisablePauseMenu = IsShown;
     }
 
     private void GetInput()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!DisablePauseMenu)
         {
-            // Debug.Log("got input");
-            if (isPaused)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                // Debug.Log("resume");
-                ResumeGame();
+                Debug.Log("got input");
+                if (isPaused)
+                {
+                    // Debug.Log("resume");
+                    ResumeGame();
+                }
+                else
+                {
+                    // Debug.Log("pause");
+                    PauseGame();
+                }
             }
-            else
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                // Debug.Log("pause");
-                PauseGame();
+                GunBenchUI.SetActive(false);
+                Time.timeScale = 1f;
+                player.SetActive(true);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                DisablePauseMenu = false;
             }
         }
     }

@@ -20,12 +20,12 @@ public class GunBenchScript : MonoBehaviour, IInteractable
 
     void Update()
     {
-        Debug.Log($"should be false: {IsShown}");
+        // Debug.Log($"should be false: {IsShown}");
     }
 
     private void ToggleBenchUI()
     {
-        Debug.Log("got input");
+        // Debug.Log("got input");
         IsShown = !IsShown;
         if (IsShown)
         {
@@ -41,7 +41,7 @@ public class GunBenchScript : MonoBehaviour, IInteractable
     }
     public void CloseGunbench()
     {
-        // Debug.Log("close");
+
         GunBenchUI.SetActive(false);
         Time.timeScale = 1f;
         IsShown = false;
@@ -53,18 +53,16 @@ public class GunBenchScript : MonoBehaviour, IInteractable
 
     public void OpenGunbench()
     {
-        // Debug.Log("open");
+
         GunBenchUI.SetActive(true);
         Time.timeScale = 0f;
         IsShown = true;
-        // player.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
     }
     public void UseGunBench()
     {
-        Debug.Log("Bench Toggled");
         ToggleBenchUI();
     }
 
