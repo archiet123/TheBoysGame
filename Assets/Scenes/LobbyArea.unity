@@ -2908,7 +2908,6 @@ GameObject:
   - component: {fileID: 510574989}
   - component: {fileID: 510574988}
   - component: {fileID: 510574987}
-  - component: {fileID: 510574986}
   - component: {fileID: 510574990}
   m_Layer: 6
   m_Name: TableTop
@@ -2932,18 +2931,6 @@ Transform:
   m_Father: {fileID: 697116228}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &510574986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510574984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32e5dc5fccaf324eac22be0b34d126f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &510574987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3021,7 +3008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 7309461462876297877}
   GunBenchUI: {fileID: 7309461462543042599}
-  RecipientScript: {fileID: 0}
+  RecipientScript: {fileID: 7309461463745230922}
 --- !u!1001 &517182624
 PrefabInstance:
   m_ObjectHideFlags: 0

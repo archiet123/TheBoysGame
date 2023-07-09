@@ -32,7 +32,7 @@ public class UIController : MonoBehaviour
 
     public void GetBool(bool IsShown)
     {
-        Debug.Log($"should be true: {IsShown}");
+        Debug.Log($"should be trueasdhfasduf: {IsShown}");
     }
 
     private void GetInput()
