@@ -14,15 +14,25 @@ public class UIController : MonoBehaviour
     //bools
     public static bool isPaused = false;
 
+    //this script
+    public static UIController Current;
 
-    void Start()
+    public void Start()
     {
-
+        if (Current == null)
+        {
+            Current = new UIController();
+        }
     }
 
-    void Update()
+    public void Update()
     {
         GetInput();
+    }
+
+    public void GetBool(bool IsShown)
+    {
+        Debug.Log($"should be true: {IsShown}");
     }
 
     private void GetInput()
