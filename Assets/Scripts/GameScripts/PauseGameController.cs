@@ -30,6 +30,18 @@ public class PauseGameController : MonoBehaviour
     //     Debug.Log($"Update: {DisablePause}");
     // }
 
+    // if (Input.GetKeyDown(KeyCode.Escape))
+    //         {
+    //             if (isPaused)
+    //             {
+    //                 ResumeGame();
+    //             }
+    //             else
+    //             {
+    //                 PauseGame();
+    //             }
+    //         }
+
     // public void PauseGame()
     // {
     //     pauseMenu.SetActive(true);
@@ -72,17 +84,7 @@ public class PauseGameController : MonoBehaviour
     //     }
     //     else
     //     {
-    //         if (Input.GetKeyDown(KeyCode.Escape))
-    //         {
-    //             if (isPaused)
-    //             {
-    //                 ResumeGame();
-    //             }
-    //             else
-    //             {
-    //                 PauseGame();
-    //             }
-    //         }
+    //         
     //     }
     // }
 }

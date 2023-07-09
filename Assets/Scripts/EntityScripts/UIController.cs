@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading;
 public class UIController : MonoBehaviour, IInteractable
 {
 
@@ -23,12 +24,19 @@ public class UIController : MonoBehaviour, IInteractable
     {
         // pauseMenu.SetActive(false);
         IsShown = false;
+        isPaused = false;
     }
 
     void Update()
     {
+        GetInput();
+    }
+
+    private void GetInput()
+    {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log("got input");
             if (isPaused)
             {
                 Debug.Log("resume");
@@ -41,15 +49,14 @@ public class UIController : MonoBehaviour, IInteractable
             }
         }
     }
-
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        isPaused = true;
         player.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        isPaused = true;
     }
 
     public void ResumeGame()
@@ -103,24 +110,24 @@ public class UIController : MonoBehaviour, IInteractable
     public void CloseGunbench()
     {
         // Debug.Log("close");
-        GunBenchUI.SetActive(false);
-        Time.timeScale = 1f;
-        IsShown = false;
-        player.SetActive(true);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        DisablePause = false;
+        // GunBenchUI.SetActive(false);
+        // Time.timeScale = 1f;
+        // IsShown = false;
+        // player.SetActive(true);
+        // Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.visible = false;
+        // DisablePause = false;
     }
 
     public void OpenGunbench()
     {
         // Debug.Log("open");
-        GunBenchUI.SetActive(true);
-        Time.timeScale = 0f;
-        IsShown = true;
-        player.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        DisablePause = true;
+        // GunBenchUI.SetActive(true);
+        // Time.timeScale = 0f;
+        // IsShown = true;
+        // player.SetActive(false);
+        // Cursor.lockState = CursorLockMode.None;
+        // Cursor.visible = true;
+        // DisablePause = true;
     }
 }
