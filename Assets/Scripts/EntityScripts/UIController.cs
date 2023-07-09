@@ -12,18 +12,8 @@ public class UIController : MonoBehaviour
     public GameObject OptionsMenu;
 
     //bools
-    public static bool isPaused = false;
-
-    //this script
-    public static UIController Current;
-
-    public void Start()
-    {
-        if (Current == null)
-        {
-            Current = new UIController();
-        }
-    }
+    public static bool isPaused;
+    [SerializeField] public static bool DisablePauseMenu = false;
 
     public void Update()
     {
@@ -32,24 +22,43 @@ public class UIController : MonoBehaviour
 
     public void GetBool(bool IsShown)
     {
-        Debug.Log($"should be trueasdhfasduf: {IsShown}");
+        DisablePauseMenu = IsShown;
     }
 
     private void GetInput()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if (!DisablePauseMenu)
         {
-            // Debug.Log("got input");
-            if (isPaused)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                // Debug.Log("resume");
-                ResumeGame();
+                if (isPaused)
+                {
+                    ResumeGame();
+                }
+                else
+                {
+                    PauseGame();
+                }
             }
-            else
+        }
+        else if (DisablePauseMenu)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                // Debug.Log("pause");
-                PauseGame();
+                GunBenchUI.SetActive(false);
+                Time.timeScale = 1f;
+                player.SetActive(true);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                DisablePauseMenu = false;
+                Debug.Log("close bench");
+                FindObjectOfType<GunBenchScript>().GetBool(DisablePauseMenu);
             }
+        }
+        else
+        {
+            Debug.Log("error");
         }
     }
 
@@ -71,5 +80,6 @@ public class UIController : MonoBehaviour
         player.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
     }
 }
