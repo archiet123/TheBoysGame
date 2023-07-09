@@ -4,76 +4,64 @@ using UnityEngine;
 
 public class PauseGameController : MonoBehaviour
 {
-    public static bool isPaused = false;
-    public GameObject pauseMenu;
-    public GameObject player;
-    public bool DisablePause;
+    // public GameObject pauseMenu;
+    // public GameObject player;
+    // public GameObject GunBenchUI;
+    // public GameObject OptionsMenu;
 
-    //need to be static
-    //this will receive variable
-    public static PauseGameController DisableUI;
+    // public static bool isPaused = false;
 
-    void Start()
-    {
-        isPaused = false;
-        // pauseMenu.SetActive(false);
 
-        if (DisableUI == null)
-        {
-            DisableUI = new PauseGameController();
-        }
-    }
+    // void Start()
+    // {
+    //     isPaused = false;
+    // }
 
-    void Update()
-    {
-        sendValue(DisablePause);
-        // Debug.Log(DisablePause);
+    // void Update()
+    // {
+    //     GetInput();
+    // }
 
-    }
+    // private void GetInput()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.Escape))
+    //     {
+    //         Debug.Log("got input");
+    //         if (isPaused)
+    //         {
+    //             Debug.Log("resume");
+    //             ResumeGame();
+    //         }
+    //         else
+    //         {
+    //             Debug.Log("pause");
+    //             PauseGame();
+    //         }
+    //     }
+    // }
 
-    public void PauseGame()
-    {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
-        player.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
+    // public void PauseGame()
+    // {
+    //     pauseMenu.SetActive(true);
+    //     Time.timeScale = 0f;
+    //     player.SetActive(false);
+    //     Cursor.lockState = CursorLockMode.None;
+    //     Cursor.visible = true;
+    //     isPaused = true;
+    // }
 
-    public void ResumeGame()
-    {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
-        player.SetActive(true);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
+    // public void ResumeGame()
+    // {
+    //     pauseMenu.SetActive(false);
+    //     Time.timeScale = 1f;
+    //     isPaused = false;
+    //     player.SetActive(true);
+    //     Cursor.lockState = CursorLockMode.Locked;
+    //     Cursor.visible = false;
+    // }
 
-    public void sendValue(bool DisablePause)
-    {
-        // if new variable true then avoid running this.
-        if (DisablePause)
-        {
-            Debug.Log("DisablePause");
-
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (isPaused)
-                {
-                    ResumeGame();
-                }
-                else
-                {
-                    PauseGame();
-                }
-            }
-        }
-    }
 }
+
+
 
 

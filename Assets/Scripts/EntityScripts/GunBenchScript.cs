@@ -2,30 +2,74 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunBenchScript : GunbenchInteractable
+public class GunBenchScript : MonoBehaviour, IInteractable
 {
+    //this script is to be the gun bench interactable
+    public GameObject player;
+    public GameObject GunBenchUI;
+    public static bool IsShown = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        Debug.Log(IsShown);
+    }
+    private void ToggleBenchUI()
+    {
+        Debug.Log("got input");
+        IsShown = !IsShown;
+        if (IsShown)
         {
-            HideUI();
+            Debug.Log("open");
+            OpenGunbench();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
+        else
         {
-            // HideUI();
+            Debug.Log("close");
+            CloseGunbench();
         }
     }
-
-    public void HideUI()
+    public void CloseGunbench()
     {
+        // Debug.Log("close");
         GunBenchUI.SetActive(false);
         Time.timeScale = 1f;
-        player.SetActive(true);
         IsShown = false;
+        player.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        DisablePause = true;
-        UIToDisable.sendValue(DisablePause);
+
+    }
+
+    public void OpenGunbench()
+    {
+        // Debug.Log("open");
+        GunBenchUI.SetActive(true);
+        Time.timeScale = 0f;
+        IsShown = true;
+        // player.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+    }
+    public void UseGunBench()
+    {
+        Debug.Log("Bench Toggled");
+        ToggleBenchUI();
+    }
+
+
+    public string GetInteractText()
+    {
+        return "Use Gunbench";
+    }
+
+    void IInteractable.Interact(Transform InteractorTransform)
+    {
+        UseGunBench();
+    }
+
+    public Transform GetTransform()
+    {
+        return transform;
     }
 }

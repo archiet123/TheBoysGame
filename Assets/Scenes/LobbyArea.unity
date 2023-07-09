@@ -2909,6 +2909,7 @@ GameObject:
   - component: {fileID: 510574988}
   - component: {fileID: 510574987}
   - component: {fileID: 510574986}
+  - component: {fileID: 510574990}
   m_Layer: 6
   m_Name: TableTop
   m_TagString: Untagged
@@ -2943,10 +2944,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32e5dc5fccaf324eac22be0b34d126f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GunBenchUI: {fileID: 7309461462543042599}
-  player: {fileID: 7309461462876297877}
-  UIToDisable: {fileID: 0}
-  DisablePause: 0
 --- !u!65 &510574987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3010,6 +3007,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510574984}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &510574990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510574984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2507a0d08316bd84086ab9a8bb04a908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 7309461462876297877}
+  GunBenchUI: {fileID: 7309461462543042599}
 --- !u!1001 &517182624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5486,6 +5497,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2.3600001, z: 0.17829758}
   m_Center: {x: 0, y: 1.1800001, z: 0.91085124}
+--- !u!1 &1014820956 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8006343357733720539, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
+  m_PrefabInstance: {fileID: 751066102568987034}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1015270286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12091,6 +12107,10 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 348421467420657310}
+    - target: {fileID: 8006343357733720538, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
+      propertyPath: GunBenchUI
+      value: 
+      objectReference: {fileID: 7309461462543042599}
     - target: {fileID: 8006343357733720539, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -12115,7 +12135,9 @@ PrefabInstance:
       propertyPath: OptionsMenu
       value: 
       objectReference: {fileID: 5275172670883974387}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8006343357733720538, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
+    - {fileID: 8006343357733720543, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
 --- !u!1001 &2553295478993475783
 PrefabInstance:
@@ -12284,7 +12306,7 @@ PrefabInstance:
     - target: {fileID: 2802360614096875360, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7309461463745230917}
+      objectReference: {fileID: 0}
     - target: {fileID: 2802360614096875367, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
       propertyPath: player
       value: 
@@ -12296,7 +12318,7 @@ PrefabInstance:
     - target: {fileID: 2802360615335463734, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7309461463745230917}
+      objectReference: {fileID: 0}
     - target: {fileID: 2802360615922106501, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
       propertyPath: m_MaxValue
       value: -10
@@ -12409,6 +12431,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 7309461462876297877}
+    - target: {fileID: 4869394333236069977, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 348421467420657310}
+    - target: {fileID: 4869394333236069977, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+      propertyPath: BackButton
+      value: 
+      objectReference: {fileID: 1867004250}
+    - target: {fileID: 4869394333236069977, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+      propertyPath: OptionsMenu
+      value: 
+      objectReference: {fileID: 5275172670883974387}
     - target: {fileID: 5636094612819828285, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -12416,7 +12450,15 @@ PrefabInstance:
     - target: {fileID: 8355964443522626398, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7309461463745230912}
+      objectReference: {fileID: 7309461463745230922}
+    - target: {fileID: 8355964443522626398, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355964443522626398, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIController, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
 --- !u!1 &5275172670883974387 stripped
@@ -12518,32 +12560,38 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8006343357733720484, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
   m_PrefabInstance: {fileID: 751066102568987034}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1014820956}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b19898761bff9e4ca27c67b02874ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7309461463745230912 stripped
+--- !u!114 &7309461463745230922
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8006343357733720538, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
-  m_PrefabInstance: {fileID: 751066102568987034}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1014820956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b4607887a72b824895c87c88c95f261, type: 3}
+  m_Script: {fileID: 11500000, guid: 61cd4db09c588444ebb50c4a0930001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7309461463745230917 stripped
+  pauseMenu: {fileID: 348421467420657310}
+  player: {fileID: 7309461462876297877}
+  GunBenchUI: {fileID: 7309461462543042599}
+  OptionsMenu: {fileID: 5275172670883974387}
+--- !u!114 &7309461463745230927
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8006343357733720543, guid: 9f6e3e924f7ccb1489d4aa259d92aa9c, type: 3}
-  m_PrefabInstance: {fileID: 751066102568987034}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1014820956}
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d46517429c923c249b0cc0c8f36ad330, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b4607887a72b824895c87c88c95f261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &7309461463903070560 stripped
