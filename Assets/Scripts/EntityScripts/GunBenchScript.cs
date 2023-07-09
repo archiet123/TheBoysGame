@@ -18,17 +18,18 @@ public class GunBenchScript : MonoBehaviour, IInteractable
 
     private void ToggleBenchUI()
     {
+        //updating variable for status of GunBenchUI
         FindObjectOfType<UIController>().GetBool(IsShown);
         if (!IsShown)
         {
             OpenGunbench();
-            Debug.Log("open bench");
+            // Debug.Log("open bench");
             FindObjectOfType<UIController>().GetBool(IsShown);
         }
         else
         {
             CloseGunbench();
-            Debug.Log("close bench");
+            // Debug.Log("close bench");
             FindObjectOfType<UIController>().GetBool(IsShown);
         }
     }
@@ -61,6 +62,8 @@ public class GunBenchScript : MonoBehaviour, IInteractable
         ToggleBenchUI();
     }
 
+    //Interactable stuff for gun bench
+    //↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
     public string GetInteractText()
     {

@@ -30,6 +30,7 @@ public class UIController : MonoBehaviour
 
         if (!DisablePauseMenu)
         {
+            //if false the pause menu will be displayed
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (isPaused)
@@ -44,6 +45,7 @@ public class UIController : MonoBehaviour
         }
         else if (DisablePauseMenu)
         {
+            //if true the gunbenchUI will be hidden
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 GunBenchUI.SetActive(false);
@@ -52,7 +54,7 @@ public class UIController : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 DisablePauseMenu = false;
-                Debug.Log("close bench");
+                // getting variable from GunBenchScript
                 FindObjectOfType<GunBenchScript>().GetBool(DisablePauseMenu);
             }
         }
