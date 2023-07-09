@@ -84,4 +84,16 @@ public class UIController : MonoBehaviour
         Cursor.visible = false;
 
     }
+
+    public void DisplayOptionsMenu()
+    {
+        pauseMenu.SetActive(false);
+        OptionsMenu.SetActive(true);
+    }
+
+    public void HideOptionsMenu()
+    {
+        pauseMenu.SetActive(true);
+        OptionsMenu.SetActive(false);
+    }
 }
