@@ -11,7 +11,7 @@ public class UIController : MonoBehaviour
     public GameObject GunBenchUI;
     public GameObject OptionsMenu;
     public GameObject WinDisplay;
-
+    public GameObject LoseDisplay;
     //bools
     public static bool isPaused;
     [SerializeField] public static bool DisablePauseMenu = false;
@@ -117,6 +117,15 @@ public class UIController : MonoBehaviour
         player.SetActive(false);
         Time.timeScale = 1f;
         WinDisplay.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void DisplayLoseScreen()
+    {
+        player.SetActive(false);
+        Time.timeScale = 1f;
+        LoseDisplay.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
