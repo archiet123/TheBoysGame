@@ -8,7 +8,7 @@ public class ActiveChilderen : MonoBehaviour
 
     int ChildCount;
     public int ActiveCount;
-
+    public GameObject GameManager;
     //need to be static
     public static ActiveChilderen Current;
 
@@ -32,6 +32,7 @@ public class ActiveChilderen : MonoBehaviour
     {
         if (ChildCount == ActiveCount)
         {
+            GameManager.GetComponent<UIController>().DisplayWinScreen();
             Debug.Log("you win");
             // return true;
         }
