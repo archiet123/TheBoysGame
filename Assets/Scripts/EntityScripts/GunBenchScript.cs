@@ -7,7 +7,6 @@ public class GunBenchScript : MonoBehaviour, IInteractable
     //GameObjects
     public GameObject player;
     public GameObject GunBenchUI;
-    public UIController RecipientScript;
     //bools
     [SerializeField] public static bool IsShown = false;
 

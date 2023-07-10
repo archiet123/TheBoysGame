@@ -62,7 +62,7 @@ public class WeaponSelect : MonoBehaviour
             ActiveWeapon.SetActive(false);
             ActiveWeapon = Donut;
             ActiveWeapon.SetActive(true);
-            AmmoUI.SetActive(false);
+            AmmoUI.SetActive(true);
             // Debug.Log(ActiveWeapon);
         }
 
@@ -80,7 +80,7 @@ public class WeaponSelect : MonoBehaviour
             ActiveWeapon.SetActive(false);
             ActiveWeapon = Phish;
             ActiveWeapon.SetActive(true);
-            AmmoUI.SetActive(false);
+            AmmoUI.SetActive(true);
             // Debug.Log(ActiveWeapon);
         }
     }
