@@ -55,7 +55,13 @@ public class GunScript : MonoBehaviour
     public void GetBool(bool IsShown)
     {
         CanShoot = IsShown;
-        Debug.Log("CanShoot:" + CanShoot);
+        // Debug.Log("CanShoot:" + CanShoot);
+    }
+
+    public void GetBool1(bool DisablePauseMenu)
+    {
+        CanShoot = DisablePauseMenu;
+        // Debug.Log("CanShoot:" + CanShoot);
     }
 
     private void MyInput()
