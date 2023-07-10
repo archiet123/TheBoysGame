@@ -56,6 +56,8 @@ public class UIController : MonoBehaviour
                 DisablePauseMenu = false;
                 // getting variable from GunBenchScript
                 FindObjectOfType<GunBenchScript>().GetBool(DisablePauseMenu);
+                //is false
+                FindObjectOfType<GunScript>().GetBool1(DisablePauseMenu);
             }
         }
         else

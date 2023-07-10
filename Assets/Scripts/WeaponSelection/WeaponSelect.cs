@@ -19,7 +19,7 @@ public class WeaponSelect : MonoBehaviour
 
     void Start()
     {
-        ActiveWeapon = Hammer;
+        ActiveWeapon = Pistol;
         // Debug.Log(ActiveWeapon);
     }
 
