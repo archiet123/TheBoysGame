@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     //bools
     public static bool isPaused;
     [SerializeField] public static bool DisablePauseMenu = false;
+    public static bool OptionsDisplayed = false;
 
     public void Update()
     {
@@ -33,7 +34,12 @@ public class UIController : MonoBehaviour
             //if false the pause menu will be displayed
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (isPaused)
+                if (OptionsDisplayed)
+                {
+
+                    HideOptionsMenu();
+                }
+                else if (isPaused)
                 {
                     ResumeGame();
                 }
@@ -41,6 +47,10 @@ public class UIController : MonoBehaviour
                 {
                     PauseGame();
                 }
+            }
+            else
+            {
+
             }
         }
         else if (DisablePauseMenu)
@@ -89,13 +99,15 @@ public class UIController : MonoBehaviour
 
     public void DisplayOptionsMenu()
     {
+        OptionsDisplayed = true;
         pauseMenu.SetActive(false);
         OptionsMenu.SetActive(true);
     }
 
     public void HideOptionsMenu()
     {
-        pauseMenu.SetActive(true);
+        OptionsDisplayed = false;
         OptionsMenu.SetActive(false);
+        pauseMenu.SetActive(true);
     }
 }
