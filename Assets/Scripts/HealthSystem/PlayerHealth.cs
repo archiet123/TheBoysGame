@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int Health;
+    public GameObject GameManager;
 
 
     void Update()
@@ -17,8 +18,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void DealDamage(int EnemyDamage)
     {
-        Debug.Log("test");
+        // Debug.Log("test");
         Health = Health - EnemyDamage;
-        // Debug.Log($"{gameObject} Health: {Health}");
+        GameManager.GetComponent<UIController>().DisplayLoseScreen();
     }
 }

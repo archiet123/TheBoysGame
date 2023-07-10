@@ -95,7 +95,7 @@ public class GunScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("shooting disabled");
+            // Debug.Log("shooting disabled");
         }
         //is full auto availible
 
@@ -169,6 +169,6 @@ public class GunScript : MonoBehaviour
     {
         BulletsLeft = MagazineSize;
         Reloading = false;
-        Debug.Log("Reloaded");
+        // Debug.Log("Reloaded");
     }
 }

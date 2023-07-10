@@ -61,7 +61,7 @@ public class GunBenchScript : MonoBehaviour, IInteractable
 
     public void UseGunBench()
     {
-        Debug.Log("Bench Toggled");
+        // Debug.Log("Bench Toggled");
         ToggleBenchUI();
     }
 
