@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
         if (Health <= 0)
         {
             Debug.Log("you lose");
+            GameManager.GetComponent<UIController>().DisplayLoseScreen();
         }
     }
 
@@ -20,6 +21,6 @@ public class PlayerHealth : MonoBehaviour
     {
         // Debug.Log("test");
         Health = Health - EnemyDamage;
-        GameManager.GetComponent<UIController>().DisplayLoseScreen();
+
     }
 }
