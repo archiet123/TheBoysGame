@@ -22,7 +22,13 @@ public class UIController : MonoBehaviour
 
     public void GetBool(bool IsShown)
     {
+        //DisablePauseMenu is on this script
         DisablePauseMenu = IsShown;
+    }
+
+    public void ShootingBool(bool DisableShooting)
+    {
+        DisablePauseMenu = DisableShooting;
     }
 
     private void GetInput()
@@ -45,6 +51,7 @@ public class UIController : MonoBehaviour
         }
         else if (DisablePauseMenu)
         {
+            //this closes the UI when Escape is clicked annd DisablePauseMenu is true
             //if true the gunbenchUI will be hidden
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -56,6 +63,9 @@ public class UIController : MonoBehaviour
                 DisablePauseMenu = false;
                 // getting variable from GunBenchScript
                 FindObjectOfType<GunBenchScript>().GetBool(DisablePauseMenu);
+                // Debug.Log("enable shooting");
+                FindObjectOfType<GunScript>().StartShooting(DisablePauseMenu);
+
             }
         }
         else

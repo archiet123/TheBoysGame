@@ -4150,7 +4150,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2802360615887227399, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
   m_PrefabInstance: {fileID: 2802360615469780602}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 859215907}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -4683,6 +4683,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830872122}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &859215907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2802360615887227393, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+  m_PrefabInstance: {fileID: 2802360615469780602}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &881302847
 GameObject:
   m_ObjectHideFlags: 0
@@ -12445,9 +12450,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2802360615887227393, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2802360615922106501, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
       propertyPath: m_MaxValue
       value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150636974115531619, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4869394331923775854, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
       propertyPath: playerInteract
@@ -12554,6 +12567,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1727173426}
     - target: {fileID: 4869394333236069976, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+      propertyPath: AmmoUI
+      value: 
+      objectReference: {fileID: 859215907}
+    - target: {fileID: 4869394333236069976, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
       propertyPath: Hammer
       value: 
       objectReference: {fileID: 1148925009}
@@ -12581,6 +12598,10 @@ PrefabInstance:
       propertyPath: OptionsMenu
       value: 
       objectReference: {fileID: 5275172670883974387}
+    - target: {fileID: 4869394333236069977, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
+      propertyPath: RecipientScript
+      value: 
+      objectReference: {fileID: 7309461463745230922}
     - target: {fileID: 5636094612819828285, guid: 47dc5958048c6694299b72d432d249d0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

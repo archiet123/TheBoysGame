@@ -16,6 +16,8 @@ public class WeaponSelect : MonoBehaviour
     public GameObject Phish;
     GameObject ActiveWeapon;
 
+    //bools
+    [SerializeField] public static bool EnableShoot = false;
 
     void Start()
     {
@@ -33,6 +35,7 @@ public class WeaponSelect : MonoBehaviour
             weaponChoices[i].WeaponText.text = (i + 1).ToString();
             weaponChoices[i].GetComponent<Button>().onClick.RemoveAllListeners();
             weaponChoices[i].GetComponent<Button>().onClick.AddListener(() => SelectWeapon(WeaponNum));
+
             // weaponChoices[i].GetComponent<Button>().onClick.AddListener(() => SelectWeapon(GameManager.Instance.currentWeapon, WeaponNum));
             //(currentWeapon) can be used as a weapon type
         }
@@ -47,14 +50,8 @@ public class WeaponSelect : MonoBehaviour
             ActiveWeapon = AR;
             ActiveWeapon.SetActive(true);
             AmmoUI.SetActive(true);
-            // Debug.Log(ActiveWeapon);
-        }
-        else if (ID == 13)
-        {
-            ActiveWeapon.SetActive(false);
-            ActiveWeapon = Pistol;
-            ActiveWeapon.SetActive(true);
-            AmmoUI.SetActive(true);
+            EnableShoot = true;
+            // FindObjectOfType<GunScript>().EnableClose(EnableShoot);
             // Debug.Log(ActiveWeapon);
         }
         else if (ID == 3)
@@ -62,7 +59,7 @@ public class WeaponSelect : MonoBehaviour
             ActiveWeapon.SetActive(false);
             ActiveWeapon = Donut;
             ActiveWeapon.SetActive(true);
-            AmmoUI.SetActive(false);
+            AmmoUI.SetActive(true);
             // Debug.Log(ActiveWeapon);
         }
 
@@ -71,7 +68,7 @@ public class WeaponSelect : MonoBehaviour
             ActiveWeapon.SetActive(false);
             ActiveWeapon = Hammer;
             ActiveWeapon.SetActive(true);
-            AmmoUI.SetActive(false);
+            AmmoUI.SetActive(false);//false for melee weapon
             // Debug.Log(ActiveWeapon);
         }
 
@@ -80,7 +77,17 @@ public class WeaponSelect : MonoBehaviour
             ActiveWeapon.SetActive(false);
             ActiveWeapon = Phish;
             ActiveWeapon.SetActive(true);
-            AmmoUI.SetActive(false);
+            AmmoUI.SetActive(true);
+            // Debug.Log(ActiveWeapon);
+        }
+        else if (ID == 13)
+        {
+            ActiveWeapon.SetActive(false);
+            ActiveWeapon = Pistol;
+            ActiveWeapon.SetActive(true);
+            AmmoUI.SetActive(true);
+            EnableShoot = true;
+            // FindObjectOfType<GunScript>().EnableClose(EnableShoot);
             // Debug.Log(ActiveWeapon);
         }
     }

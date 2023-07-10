@@ -20,7 +20,7 @@ public class GunScript : MonoBehaviour
 
     //bools//
     bool Shooting, ReadyToShoot, Reloading;
-
+    [SerializeField] public static bool DisableShooting = false;
     //Refrences
     public Camera PlayerCam;
     public Transform AttackPoint;
@@ -42,6 +42,8 @@ public class GunScript : MonoBehaviour
 
     private void Update()
     {
+        // FindObjectOfType<GunBenchScript>().ShootingBool(DisableShooting);
+        // Debug.Log($"should be true: {DisableShooting}");
         MyInput();
 
         //Set ammo display if it exists 
@@ -50,32 +52,57 @@ public class GunScript : MonoBehaviour
             AmmoDisplay.SetText(BulletsLeft / BulletsPerTap + " / " + MagazineSize / BulletsPerTap);
         }
     }
+
+
+    public void StartShooting1(bool IsShown)
+    {
+        //getting variable from GunBenchScript
+        DisableShooting = IsShown;
+        DisableShooting = true;
+    }
+
+    public void StartShooting(bool DisablePauseMenu)
+    {
+        //getting variable from UIController
+        DisableShooting = DisablePauseMenu;
+        DisableShooting = true;
+    }
+
     private void MyInput()
     {
-        //is full auto availible
-        if (AllowButtonHold)
+        //if false disable shooting
+        if (!DisableShooting)
         {
-            Shooting = (Input.GetKey(KeyCode.Mouse0));
+            Debug.Log("disable shooting");
         }
+        //if true enable shooting
         else
         {
-            Shooting = (Input.GetKeyDown(KeyCode.Mouse0));
-        }
+            //is full auto availible
+            if (AllowButtonHold)
+            {
+                Shooting = (Input.GetKey(KeyCode.Mouse0));
+            }
+            else
+            {
+                Shooting = (Input.GetKeyDown(KeyCode.Mouse0));
+            }
 
 
-        //Reloading
-        if (Input.GetKeyDown(KeyCode.R) && BulletsLeft < MagazineSize && !Reloading)
-        {
-            Reload();
-        }
+            //Reloading
+            if (Input.GetKeyDown(KeyCode.R) && BulletsLeft < MagazineSize && !Reloading)
+            {
+                Reload();
+            }
 
-        //shooting
-        if (ReadyToShoot && Shooting && !Reloading && BulletsLeft > 0)
-        {
-            //set bullets to 0
-            BulletsShot = 0;
+            //shooting
+            if (ReadyToShoot && Shooting && !Reloading && BulletsLeft > 0)
+            {
+                //set bullets to 0
+                BulletsShot = 0;
 
-            Shoot();
+                Shoot();
+            }
         }
     }
 
