@@ -9,6 +9,7 @@ public class GunBenchScript : MonoBehaviour, IInteractable
     public GameObject GunBenchUI;
     //bools
     [SerializeField] public static bool IsShown = false;
+    // [SerializeField] public static bool CanShoot;
 
     public void GetBool(bool DisablePauseMenu)
     {
@@ -24,12 +25,16 @@ public class GunBenchScript : MonoBehaviour, IInteractable
             OpenGunbench();
             // Debug.Log("open bench");
             FindObjectOfType<UIController>().GetBool(IsShown);
+            //is true
+            FindObjectOfType<GunScript>().GetBool(IsShown);
         }
         else
         {
             CloseGunbench();
             // Debug.Log("close bench");
             FindObjectOfType<UIController>().GetBool(IsShown);
+            //is false
+            FindObjectOfType<GunScript>().GetBool(IsShown);
         }
     }
     public void CloseGunbench()
@@ -50,11 +55,10 @@ public class GunBenchScript : MonoBehaviour, IInteractable
         GunBenchUI.SetActive(true);
         Time.timeScale = 0f;
         IsShown = true;
-        // player.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
     }
+
     public void UseGunBench()
     {
         Debug.Log("Bench Toggled");

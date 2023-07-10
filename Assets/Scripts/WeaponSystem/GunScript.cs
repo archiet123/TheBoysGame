@@ -20,6 +20,7 @@ public class GunScript : MonoBehaviour
 
     //bools//
     bool Shooting, ReadyToShoot, Reloading;
+    [SerializeField] public static bool CanShoot;
 
     //Refrences
     public Camera PlayerCam;
@@ -50,33 +51,48 @@ public class GunScript : MonoBehaviour
             AmmoDisplay.SetText(BulletsLeft / BulletsPerTap + " / " + MagazineSize / BulletsPerTap);
         }
     }
+
+    public void GetBool(bool IsShown)
+    {
+        CanShoot = IsShown;
+        Debug.Log("CanShoot:" + CanShoot);
+    }
+
     private void MyInput()
     {
-        //is full auto availible
-        if (AllowButtonHold)
+        if (!CanShoot)
         {
-            Shooting = (Input.GetKey(KeyCode.Mouse0));
+            if (AllowButtonHold)
+            {
+                Shooting = (Input.GetKey(KeyCode.Mouse0));
+            }
+            else
+            {
+                Shooting = (Input.GetKeyDown(KeyCode.Mouse0));
+            }
+
+
+            //Reloading
+            if (Input.GetKeyDown(KeyCode.R) && BulletsLeft < MagazineSize && !Reloading)
+            {
+                Reload();
+            }
+
+            //shooting
+            if (ReadyToShoot && Shooting && !Reloading && BulletsLeft > 0)
+            {
+                //set bullets to 0
+                BulletsShot = 0;
+
+                Shoot();
+            }
         }
         else
         {
-            Shooting = (Input.GetKeyDown(KeyCode.Mouse0));
+            Debug.Log("shooting disabled");
         }
+        //is full auto availible
 
-
-        //Reloading
-        if (Input.GetKeyDown(KeyCode.R) && BulletsLeft < MagazineSize && !Reloading)
-        {
-            Reload();
-        }
-
-        //shooting
-        if (ReadyToShoot && Shooting && !Reloading && BulletsLeft > 0)
-        {
-            //set bullets to 0
-            BulletsShot = 0;
-
-            Shoot();
-        }
     }
 
     private void Shoot()
