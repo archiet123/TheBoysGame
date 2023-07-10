@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
     public GameObject player;
     public GameObject GunBenchUI;
     public GameObject OptionsMenu;
+    public GameObject WinDisplay;
 
     //bools
     public static bool isPaused;
@@ -109,5 +110,14 @@ public class UIController : MonoBehaviour
         OptionsDisplayed = false;
         OptionsMenu.SetActive(false);
         pauseMenu.SetActive(true);
+    }
+
+    public void DisplayWinScreen()
+    {
+        player.SetActive(false);
+        Time.timeScale = 1f;
+        WinDisplay.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

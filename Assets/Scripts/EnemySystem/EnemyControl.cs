@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyControl : MonoBehaviour
 {
 
-    public float lookRadius = 10f;
+    public float lookRadius = 30f;
 
     public float timeBetweenAttacks;
     bool alreadyAttacked;
@@ -63,7 +63,7 @@ public class EnemyControl : MonoBehaviour
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
     }
 
     void OnDrawGizomsSelected()
