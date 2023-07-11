@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
 {
     public int EnemyHealth;
     public int DeadEnemyCount;
     public ActiveChilderen anotherScript;
+
+    //UI Objects
+    public Slider HealthSlider;
     void Update()
     {
         CheckEnemyHealth();
@@ -29,9 +33,15 @@ public class HealthScript : MonoBehaviour
         }
     }
 
+    public void SetHealth(int CurrentHealth)
+    {
+        Debug.Log("sethealth");
+        HealthSlider.value = CurrentHealth;
+    }
+
     public void DealDamage(int WeaponDamage)
     {
         EnemyHealth = EnemyHealth - WeaponDamage;
-        // Debug.Log($"{gameObject} Health: {EnemyHealth}");
+        SetHealth(EnemyHealth);
     }
 }
