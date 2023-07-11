@@ -9080,6 +9080,7 @@ GameObject:
   - component: {fileID: 1152462697}
   - component: {fileID: 1152462696}
   - component: {fileID: 1152462695}
+  - component: {fileID: 1152462698}
   m_Layer: 0
   m_Name: EnemyHealthCanvas
   m_TagString: Untagged
@@ -9169,6 +9170,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1152462698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152462693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a372f497368b6344d9d73ddc190ca7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCam: {fileID: 7309461462619741570}
 --- !u!1 &1160719940
 GameObject:
   m_ObjectHideFlags: 0
@@ -12012,6 +12026,7 @@ GameObject:
   - component: {fileID: 1588140836}
   - component: {fileID: 1588140835}
   - component: {fileID: 1588140834}
+  - component: {fileID: 1588140837}
   m_Layer: 0
   m_Name: EnemyHealthCanvas
   m_TagString: Untagged
@@ -12101,6 +12116,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1588140837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588140832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a372f497368b6344d9d73ddc190ca7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCam: {fileID: 7309461462619741570}
 --- !u!1001 &1593541596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13217,6 +13245,7 @@ GameObject:
   - component: {fileID: 1749843356}
   - component: {fileID: 1749843355}
   - component: {fileID: 1749843354}
+  - component: {fileID: 1749843357}
   m_Layer: 0
   m_Name: EnemyHealthCanvas
   m_TagString: Untagged
@@ -13306,6 +13335,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1749843357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749843352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a372f497368b6344d9d73ddc190ca7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCam: {fileID: 7309461462619741570}
 --- !u!1001 &1751268117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14236,6 +14278,7 @@ GameObject:
   - component: {fileID: 1898080656}
   - component: {fileID: 1898080655}
   - component: {fileID: 1898080654}
+  - component: {fileID: 1898080657}
   m_Layer: 0
   m_Name: EnemyHealthCanvas
   m_TagString: Untagged
@@ -14325,6 +14368,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1898080657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898080652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a372f497368b6344d9d73ddc190ca7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCam: {fileID: 7309461462619741570}
 --- !u!1 &1898082285
 GameObject:
   m_ObjectHideFlags: 0
@@ -15555,6 +15611,7 @@ GameObject:
   - component: {fileID: 2082681337}
   - component: {fileID: 2082681336}
   - component: {fileID: 2082681335}
+  - component: {fileID: 2082681338}
   m_Layer: 0
   m_Name: EnemyHealthCanvas
   m_TagString: Untagged
@@ -15644,6 +15701,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2082681338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082681333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a372f497368b6344d9d73ddc190ca7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCam: {fileID: 7309461462619741570}
 --- !u!1 &2087180607
 GameObject:
   m_ObjectHideFlags: 0
@@ -16692,6 +16762,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6319381427983356292, guid: b77b16258a475ee4ab0e5be1fbf1e912, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 4c28273ee2a24f24880e6d9bea2a0683, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b77b16258a475ee4ab0e5be1fbf1e912, type: 3}
 --- !u!1 &7309461462273898613 stripped
