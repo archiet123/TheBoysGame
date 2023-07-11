@@ -1119,7 +1119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -736, y: 0}
+  m_AnchoredPosition: {x: -720.7, y: -3.4}
   m_SizeDelta: {x: 512, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118938877
@@ -1142,7 +1142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f7da549b202b25c408ee5f0b7799c015, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 568101f097bb3ab4b9ea8590831d9823, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1258,7 +1258,7 @@ RectTransform:
   m_GameObject: {fileID: 125477179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4460298, y: 0.4460298, z: 0.4460298}
+  m_LocalScale: {x: 0.37901384, y: 0.37901384, z: 0.37901384}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1780753684}
@@ -1267,7 +1267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2726, y: 58}
+  m_AnchoredPosition: {x: -2814.5, y: 93.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &131155991
@@ -2744,7 +2744,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5a8b404040333d244b495257fa53d951, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25da896d53b522740923f76b9e2d406d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10471,8 +10471,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.3239746, y: -3}
-  m_SizeDelta: {x: -30.62, y: -35.494}
+  m_AnchoredPosition: {x: 12.084961, y: -3}
+  m_SizeDelta: {x: -59.438, y: -35.494}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &978575929
 MonoBehaviour:
@@ -18826,9 +18826,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -22991,6 +22991,10 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1014820956}
+    - target: {fileID: 5225284964907670693, guid: dcc6dc18d90462c4fa607b713195be42, type: 3}
+      propertyPath: HealthSlider
+      value: 
+      objectReference: {fileID: 1780753685}
     - target: {fileID: 5225284964907670698, guid: dcc6dc18d90462c4fa607b713195be42, type: 3}
       propertyPath: m_RootOrder
       value: 0
