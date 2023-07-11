@@ -10,6 +10,20 @@ public class NpcInteractable : MonoBehaviour, IInteractable
     public Dialogue dialogue;
     public GameObject DialogueManager;
 
+    Transform target;
+    UnityEngine.AI.NavMeshAgent agent;
+
+    void Start()
+    {
+        target = PlayerTracker.instance.player.transform;
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+    }
+
+    void Update()
+    {
+        FacePlayer();
+    }
+    
     public void Interact()
     {
         Debug.Log($"Interacted with {NpcName}");
@@ -39,5 +53,12 @@ public class NpcInteractable : MonoBehaviour, IInteractable
     public void TriggerDialogue()
     {
         DialogueManager.GetComponent<DialogueSystem>().StartDialogue(dialogue);
+    }
+
+     void FacePlayer()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
     }
 }
