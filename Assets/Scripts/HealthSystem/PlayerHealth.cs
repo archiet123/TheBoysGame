@@ -34,6 +34,6 @@ public class PlayerHealth : MonoBehaviour
     {
         // Debug.Log("test");
         Health = Health - EnemyDamage;
-
+        SetHealth(Health);
     }
 }
