@@ -5,12 +5,17 @@ using TMPro;
 
 public class DialogueSystem : MonoBehaviour
 {
+    //GameObjects
     public GameObject Prompt;
     public GameObject panel;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
+    //sentence list
     private Queue<string> sentences;
+
+    //bools
+    [SerializeField] public bool TalkingToNPC;
 
     void Start()
     {
@@ -20,7 +25,7 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             DisplayNextSentence();
         }
@@ -37,7 +42,6 @@ public class DialogueSystem : MonoBehaviour
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
-            Debug.Log("test");
         }
 
         DisplayNextSentence();
@@ -75,10 +79,13 @@ public class DialogueSystem : MonoBehaviour
     public void EndDialogue()
     {
         sentences = new Queue<string>();
-
         panel.SetActive(false);
         Prompt.SetActive(true);
         dialogueText.text = "";
         nameText.text = "";
+        TalkingToNPC = false;
+        FindObjectOfType<PlayerInteract>().GetBool(TalkingToNPC);
+        Debug.Log("EndDialogue");
     }
 }
+
