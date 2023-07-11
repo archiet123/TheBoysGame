@@ -4,26 +4,41 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
+    //bools
+    public bool DisableInteract = false;
+
     private void Update()
     {
         //if E is clicked within range on an entity NpcInteracable is called, 
         //functionality for that entity is run on NpcInteractable.
         if (Input.GetKeyDown(KeyCode.E))
         {
-
-            IInteractable interactable = GetInteractableObject();
-            if (interactable != null)
+            //if DisableInteract is true the player wont be able to initiate an interaction,
+            //this way E can be use to skip sentances
+            if (DisableInteract)
             {
-                // Debug.Log("e click");
-                interactable.Interact(transform);
+                Debug.Log("disable interact");
             }
             else
             {
-                // Debug.Log("false");
+                Debug.Log("enable interact");
+                IInteractable interactable = GetInteractableObject();
+                if (interactable != null)
+                {
+                    // Debug.Log("e click");
+                    interactable.Interact(transform);
+                }
+                else
+                {
+                    // Debug.Log("false");
+                }
             }
-
         }
+    }
 
+    public void GetBool(bool TalkingToNPC)
+    {
+        DisableInteract = TalkingToNPC;
     }
 
     public IInteractable GetInteractableObject()

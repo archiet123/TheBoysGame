@@ -115,7 +115,7 @@ public class UIController : MonoBehaviour
     public void DisplayWinScreen()
     {
         player.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
         WinDisplay.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -124,7 +124,7 @@ public class UIController : MonoBehaviour
     public void DisplayLoseScreen()
     {
         player.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
         LoseDisplay.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

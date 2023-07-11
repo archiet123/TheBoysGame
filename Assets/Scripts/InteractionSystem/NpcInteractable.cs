@@ -9,10 +9,12 @@ public class NpcInteractable : MonoBehaviour, IInteractable
     public string NpcName;
     public Dialogue dialogue;
     public GameObject DialogueManager;
+    //bools
+    [SerializeField] public bool TalkingToNPC = false;
 
     public void Interact()
     {
-        Debug.Log($"Interacted with {NpcName}");
+        // Debug.Log($"Interacted with {NpcName}");
         // Debug.Log("got name");
         //dialouge stuff to go here
         TriggerDialogue();
@@ -39,5 +41,8 @@ public class NpcInteractable : MonoBehaviour, IInteractable
     public void TriggerDialogue()
     {
         DialogueManager.GetComponent<DialogueSystem>().StartDialogue(dialogue);
+        TalkingToNPC = true;
+        FindObjectOfType<PlayerInteract>().GetBool(TalkingToNPC);
+        Debug.Log("StartDialogue");
     }
 }
