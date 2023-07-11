@@ -85,7 +85,7 @@ public class DialogueSystem : MonoBehaviour
         nameText.text = "";
         TalkingToNPC = false;
         FindObjectOfType<PlayerInteract>().GetBool(TalkingToNPC);
-        Debug.Log("EndDialogue");
+        // Debug.Log("EndDialogue");
     }
 }
 
