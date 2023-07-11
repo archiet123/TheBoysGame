@@ -10,12 +10,12 @@ public class NpcInteractable : MonoBehaviour, IInteractable
     public Dialogue dialogue;
     public GameObject DialogueManager;
 
-    Transform target;
+    Transform player;
     UnityEngine.AI.NavMeshAgent agent;
 
     void Start()
     {
-        target = PlayerTracker.instance.player.transform;
+        player = PlayerTracker.instance.player.transform;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
@@ -57,7 +57,7 @@ public class NpcInteractable : MonoBehaviour, IInteractable
 
      void FacePlayer()
     {
-        Vector3 direction = (target.position - transform.position).normalized;
+        Vector3 direction = (player.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
     }
