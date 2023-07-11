@@ -12,6 +12,20 @@ public class NpcInteractable : MonoBehaviour, IInteractable
     //bools
     [SerializeField] public bool TalkingToNPC = false;
 
+    Transform player;
+    UnityEngine.AI.NavMeshAgent agent;
+
+    void Start()
+    {
+        player = PlayerTracker.instance.player.transform;
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+    }
+
+    void Update()
+    {
+        FacePlayer();
+    }
+    
     public void Interact()
     {
         // Debug.Log($"Interacted with {NpcName}");
@@ -44,5 +58,12 @@ public class NpcInteractable : MonoBehaviour, IInteractable
         TalkingToNPC = true;
         FindObjectOfType<PlayerInteract>().GetBool(TalkingToNPC);
         Debug.Log("StartDialogue");
+    }
+
+     void FacePlayer()
+    {
+        Vector3 direction = (player.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
     }
 }
