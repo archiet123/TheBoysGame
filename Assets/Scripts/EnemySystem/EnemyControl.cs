@@ -32,11 +32,11 @@ public class EnemyControl : MonoBehaviour
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
-
+            AttackPlayer();
+            FaceTarget();
             if (distance <= agent.stoppingDistance)
             {
-                FaceTarget();
-                AttackPlayer();
+
             }
         }
     }
@@ -47,7 +47,7 @@ public class EnemyControl : MonoBehaviour
         {
 
             Rigidbody rb = Instantiate(Bullet, AttackPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 50f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * 100f, ForceMode.Impulse);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
