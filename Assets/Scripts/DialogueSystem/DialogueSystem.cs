@@ -15,7 +15,7 @@ public class DialogueSystem : MonoBehaviour
     private Queue<string> sentences;
 
     //bools
-    [SerializeField] public bool TalkingToNPC;
+    [SerializeField] public bool DialogueEnded = false;
 
     void Start()
     {
@@ -25,10 +25,11 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             DisplayNextSentence();
         }
+
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -83,9 +84,9 @@ public class DialogueSystem : MonoBehaviour
         Prompt.SetActive(true);
         dialogueText.text = "";
         nameText.text = "";
-        TalkingToNPC = false;
-        FindObjectOfType<PlayerInteract>().GetBool(TalkingToNPC);
-        // Debug.Log("EndDialogue");
+        DialogueEnded = false;
+        FindObjectOfType<PlayerInteract>().GetBool(DialogueEnded);
+        Debug.Log("EndDialogue");
     }
 }
 

@@ -39,6 +39,14 @@ public class PlayerInteract : MonoBehaviour
     public void GetBool(bool TalkingToNPC)
     {
         DisableInteract = TalkingToNPC;
+        // DisableInteract = true;
+
+    }
+
+    public void DialogueEnded(bool DialogueEnded)
+    {
+        DisableInteract = DialogueEnded;
+        // DisableInteract = true;
     }
 
     public IInteractable GetInteractableObject()
