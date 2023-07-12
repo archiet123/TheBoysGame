@@ -1,54 +1,96 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyControl : MonoBehaviour
 {
+    public NavMeshAgent agent;
 
-    public float lookRadius = 30f;
+    public Transform player;
 
+    public LayerMask whatIsGround, whatIsPlayer;
+
+    //Patroling
+    public Vector3 walkPoint;
+    bool walkPointSet;
+    public float walkPointRange;
+
+    //Atacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
-    public GameObject Bullet;
     public Transform AttackPoint;
+    public GameObject projectile;
 
-    Transform target;
-    NavMeshAgent agent;
+    //states
+    public float sightRange, attackRange;
+    public bool playerInSightRange, playerInAttackRange;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        target = PlayerTracker.instance.player.transform;
+        player = GameObject.Find("PlayerObject").transform;
         agent = GetComponent<NavMeshAgent>();
-
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+        //Check for sight and attack range
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (distance <= lookRadius)
+        if (!playerInSightRange && !playerInAttackRange) Patroling();
+        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (playerInSightRange && playerInAttackRange) AttackPlayer();
+    }
+
+    private void Patroling()
+    {
+        if (!walkPointSet) SearchWalkPoint();
+
+        if (walkPointSet)
         {
-            agent.SetDestination(target.position);
-            AttackPlayer();
-            FaceTarget();
-            if (distance <= agent.stoppingDistance)
-            {
-
-            }
+            agent.SetDestination(walkPoint);
         }
+
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+
+        //Walkpoint reached
+        if (distanceToWalkPoint.magnitude < 1f)
+        {
+            walkPointSet = false;
+        }
+    }
+
+    private void SearchWalkPoint()
+    {
+        //Calculate random point in range
+        float randomZ = Random.Range(-walkPointRange, walkPointRange);
+        float randomX = Random.Range(-walkPointRange, walkPointRange);
+
+        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+
+        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+        {
+            walkPointSet = true;
+        }
+    }
+
+    private void ChasePlayer()
+    {
+        agent.SetDestination(player.position);
     }
 
     private void AttackPlayer()
     {
+        //Make sure enemy doesn't move
+        agent.SetDestination(transform.position);
+
+        transform.LookAt(player);
+
         if (!alreadyAttacked)
         {
-
-            Rigidbody rb = Instantiate(Bullet, AttackPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 100f, ForceMode.Impulse);
-
+            //Attack code here
+            Rigidbody rb = Instantiate(projectile, AttackPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -59,16 +101,4 @@ public class EnemyControl : MonoBehaviour
         alreadyAttacked = false;
     }
 
-    void FaceTarget()
-    {
-        Vector3 direction = (target.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
-    }
-
-    void OnDrawGizomsSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadius);
-    }
 }
