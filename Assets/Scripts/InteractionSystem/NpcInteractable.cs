@@ -25,7 +25,7 @@ public class NpcInteractable : MonoBehaviour, IInteractable
     {
         FacePlayer();
     }
-    
+
     public void Interact()
     {
         // Debug.Log($"Interacted with {NpcName}");
@@ -60,7 +60,7 @@ public class NpcInteractable : MonoBehaviour, IInteractable
         Debug.Log("StartDialogue");
     }
 
-     void FacePlayer()
+    void FacePlayer()
     {
         Vector3 direction = (player.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
