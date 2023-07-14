@@ -17,10 +17,14 @@ public class EquipmentController : MonoBehaviour, IInteractable
     public GameObject UtilityTab;
     public GameObject StatsTab;
     GameObject ActiveTab;
+    //strings
+    public string PreviousTab;
+    public string CurrentTab;
 
     void start()
     {
         WeaponTab = ActiveTab;
+        string PreviousTab = EventSystem.current.currentSelectedGameObject.name;
     }
 
     void Update()
@@ -31,11 +35,13 @@ public class EquipmentController : MonoBehaviour, IInteractable
     public void SelectedNewTab()
     {
         string CurrentTab = EventSystem.current.currentSelectedGameObject.name;
-        CurrentTab = ActiveTab;
-        Debug.Log(CurrentTab);
+        Debug.Log($"Set {CurrentTab} Active");
     }
 
-
+    public void DisablePreviousTab()
+    {
+        //PreviousTab.SetFalse
+    }
 
 
     public void GetBool(bool DisablePauseMenu)
