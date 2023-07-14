@@ -13,17 +13,20 @@ public class EquipmentController : MonoBehaviour, IInteractable
     //bools
     [SerializeField] public static bool IsShown = false;
     //MenuTabs
-    public GameObject WeaponTab;
-    public GameObject UtilityTab;
-    public GameObject StatsTab;
-    GameObject ActiveTab;
+    public Button WeaponTab;
+    public Button UtilityTab;
+    public Button StatsTab;
+    Button ActiveButton;
     //strings
     public string PreviousTab;
     public string CurrentTab;
+    //images
+    public Sprite InactiveTab;
+    public Sprite ActiveTab;
 
     void start()
     {
-        WeaponTab = ActiveTab;
+        ActiveButton = WeaponTab;
         string PreviousTab = EventSystem.current.currentSelectedGameObject.name;
     }
 
@@ -35,7 +38,10 @@ public class EquipmentController : MonoBehaviour, IInteractable
     public void SelectedNewTab()
     {
         string CurrentTab = EventSystem.current.currentSelectedGameObject.name;
-        Debug.Log($"Set {CurrentTab} Active");
+        ActiveButton.image.sprite = InactiveTab;
+        // ActiveButton = CurrentTab;
+        ActiveButton.image.sprite = ActiveTab;
+        // Debug.Log($"Set {CurrentTab} Active");
     }
 
     public void DisablePreviousTab()
