@@ -57,8 +57,8 @@ to be determined
 
 ##Next Steps
 1. Programming starting weapons, making sure everything else is locked in menu  
-   _Better UI for weapon selection
-   _ more weapons and different bullet types  
+   _ Better UI for weapon selection
+   _ More weapons and different bullet types  
    _ Currency system and shop
    
 2. Environment generation after completing a stage.
