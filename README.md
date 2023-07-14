@@ -57,7 +57,7 @@ to be determined
 
 ##Next Steps
 1. Programming starting weapons, making sure everything else is locked in menu  
-   _ Better UI for weapon selection
+   _Better UI for weapon selection
    _ more weapons and different bullet types  
    _ Currency system and shop
    
