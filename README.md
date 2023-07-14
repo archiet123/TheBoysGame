@@ -54,3 +54,15 @@ the player will be rewarded with perminant percs/buffs after playing long runs, 
 
 finalboss:
 to be determined
+
+##Next Steps
+1. Programming starting weapons, making sure everything else is locked in menu  
+   _ Better UI for weapon selection
+   _ more weapons and different bullet types  
+   _ Currency system and shop
+   
+2. Environment generation after completing a stage.
+   _ Actual environment
+   _ Learn how to make sliding doors
+
+3. More sounds and models
