@@ -4079,9 +4079,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 7309461462876297877}
   EquipmentMenu: {fileID: 369773981}
+  CurrentTab: {fileID: 0}
   WeaponTab: {fileID: 80544409}
   UtilityTab: {fileID: 1247904219}
   StatsTab: {fileID: 1830748327}
+  PreviousTab: 
+  InactiveTab: {fileID: 21300000, guid: 3a8244faad60e064f939b5f41c9dee8c, type: 3}
+  ActiveTab: {fileID: 21300000, guid: 37eddf579698a874580adb636f3999fa, type: 3}
 --- !u!1001 &373194685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7738,9 +7742,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 7309461462876297877}
   EquipmentMenu: {fileID: 369773981}
+  CurrentTab: {fileID: 0}
   WeaponTab: {fileID: 80544409}
   UtilityTab: {fileID: 1247904219}
   StatsTab: {fileID: 1830748327}
+  PreviousTab: 
+  InactiveTab: {fileID: 0}
+  ActiveTab: {fileID: 0}
 --- !u!1001 &828059878
 PrefabInstance:
   m_ObjectHideFlags: 0

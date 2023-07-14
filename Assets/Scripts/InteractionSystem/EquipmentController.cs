@@ -10,6 +10,7 @@ public class EquipmentController : MonoBehaviour, IInteractable
     //GameObjects
     public GameObject player;
     public GameObject EquipmentMenu;
+
     //bools
     [SerializeField] public static bool IsShown = false;
     //MenuTabs
@@ -17,9 +18,10 @@ public class EquipmentController : MonoBehaviour, IInteractable
     public Button UtilityTab;
     public Button StatsTab;
     Button ActiveButton;
+    public GameObject CurrentTab;
     //strings
     public string PreviousTab;
-    public string CurrentTab;
+
     //images
     public Sprite InactiveTab;
     public Sprite ActiveTab;
@@ -37,9 +39,9 @@ public class EquipmentController : MonoBehaviour, IInteractable
 
     public void SelectedNewTab()
     {
-        string CurrentTab = EventSystem.current.currentSelectedGameObject.name;
+        CurrentTab = EventSystem.current.currentSelectedGameObject;
         ActiveButton.image.sprite = InactiveTab;
-        // ActiveButton = CurrentTab;
+        ActiveButton = CurrentTab;
         ActiveButton.image.sprite = ActiveTab;
         // Debug.Log($"Set {CurrentTab} Active");
     }
